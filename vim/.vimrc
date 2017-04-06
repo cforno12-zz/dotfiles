@@ -48,6 +48,9 @@ call plug#end()
 let g:airline_theme='bubblegum'
 set laststatus=2
 
+" CtrlP
+set runtimepath^=~/dotfiles/vim/bundle/ctrlp.vim
+
 "COLOR
 
 " Preferred color scheme
@@ -76,6 +79,10 @@ set softtabstop=4
 " use tabs, not spaces
 set noexpandtab
 
+" make backspace work like most other apps
+set backspace=2
+set backspace=indent,eol,start
+
 " UI CONFIG
 
 " show number lines
@@ -100,7 +107,7 @@ set showmatch
 set ruler
 
 " Height of the commmand bar
-set cmdheight=2
+set cmdheight=1
 
 " SEARCHING
 
@@ -130,11 +137,15 @@ nnoremap E $
 nnoremap $ <nop>
 nnoremap ^ <nop>
 
-" quit INSERT mode
-imap zz <esc>
+" quit INSERT or VISUAL mode
+imap <C-x> <esc>
+vmap <C-x> <esc>
 
 " quit vim without saving
-nnoremap qq :q!
+nnoremap <C-c> :q!<ENTER>
+
+" center cursor
+nnoremap <C-l> z.
 
 " toggle gundo
  nnoremap <leader>u :GundoToggle<CR>
