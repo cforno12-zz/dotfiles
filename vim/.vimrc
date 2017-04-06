@@ -1,8 +1,6 @@
 " Vim config by CrisForno
 
 set nocompatible              " be iMproved, required
-filetype off                  " required
-
 
 call plug#begin('~/.vim/plugged')
 
@@ -36,10 +34,18 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Unmanaged plugin (manually installed and updated)
 Plug '~/my-prototype-plugin'
 
+" AIRLINE
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" GRUNDO
+Plug 'sjl/gundo.vim'
 
 " Initialize plugin system
 call plug#end()
+
+" AIRLINE
+let g:airline_theme='solarized'
 
 "COLOR
 
@@ -77,6 +83,9 @@ set number
 " show command in bottom bar
 set showcmd
 
+" highlight current line
+set cursorline
+
 " This both turns on filetype detection and allows loading of language specific indentation files based on that detection.
 filetype indent on
 
@@ -100,10 +109,34 @@ set incsearch
 " highlight matches
 set hlsearch
 
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+
 " KEYBINDINGS
 
 " leader is a comma
 let mapleader=","
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
+" move to beginning/end of line
+nnoremap B ^
+nnoremap E $
+
+" $/^ doesn't do anything
+nnoremap $ <nop>
+nnoremap ^ <nop>
+
+" quit INSERT mode
+imap zz <esc>
+
+" quit vim without saving
+nnoremap qq :q!
+
+" toggle gundo
+ nnoremap <leader>u :GundoToggle<CR>
 
 " BACKUPS
 
