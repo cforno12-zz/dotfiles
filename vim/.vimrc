@@ -45,7 +45,8 @@ Plug 'sjl/gundo.vim'
 call plug#end()
 
 " AIRLINE
-let g:airline_theme='solarized'
+let g:airline_theme='bubblegum'
+set laststatus=2
 
 "COLOR
 
