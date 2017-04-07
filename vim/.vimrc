@@ -137,12 +137,8 @@ nnoremap E $
 nnoremap $ <nop>
 nnoremap ^ <nop>
 
-" quit INSERT or VISUAL mode
-imap <C-x> <esc>
-vmap <C-x> <esc>
-
 " quit vim without saving
-nnoremap <C-c> :q!<ENTER>
+nnoremap qq :q!<ENTER>
 
 " center cursor
 nnoremap <C-l> z.
