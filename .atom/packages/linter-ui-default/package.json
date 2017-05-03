@@ -2,40 +2,40 @@
   "_args": [
     [
       {
-        "raw": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117228-4463-1qzt2fa/package.tgz",
+        "raw": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117315-2129-1chg3hu/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117228-4463-1qzt2fa/package.tgz",
-        "spec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117228-4463-1qzt2fa/package.tgz",
+        "rawSpec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117315-2129-1chg3hu/package.tgz",
+        "spec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117315-2129-1chg3hu/package.tgz",
         "type": "local"
       },
-      "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/apm-install-dir-117228-4463-3i4hog"
+      "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/apm-install-dir-117315-2129-1mm3i54"
     ]
   ],
-  "_from": "../d-117228-4463-1qzt2fa/package.tgz",
-  "_id": "linter-ui-default@1.2.2",
+  "_from": "../d-117315-2129-1chg3hu/package.tgz",
+  "_id": "linter-ui-default@1.2.3",
   "_inCache": true,
   "_installable": true,
   "_location": "/linter-ui-default",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117228-4463-1qzt2fa/package.tgz",
+    "raw": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117315-2129-1chg3hu/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117228-4463-1qzt2fa/package.tgz",
-    "spec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117228-4463-1qzt2fa/package.tgz",
+    "rawSpec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117315-2129-1chg3hu/package.tgz",
+    "spec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117315-2129-1chg3hu/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117228-4463-1qzt2fa/package.tgz",
-  "_shasum": "9eb05af81c4eeb023391465fa8aec0600bbfe5d8",
+  "_resolved": "file:../d-117315-2129-1chg3hu/package.tgz",
+  "_shasum": "92a6c92019a02ff06eda364918ae9aaa57ae30eb",
   "_shrinkwrap": null,
-  "_spec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117228-4463-1qzt2fa/package.tgz",
-  "_where": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/apm-install-dir-117228-4463-3i4hog",
+  "_spec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117315-2129-1chg3hu/package.tgz",
+  "_where": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/apm-install-dir-117315-2129-1mm3i54",
   "bugs": {
     "url": "https://github.com/steelbrain/linter-ui-default/issues"
   },
@@ -183,13 +183,12 @@
     "react-dom": "^15.3.2",
     "react-resizable-box": "^1.8.1",
     "sb-debounce": "^1.0.1",
-    "sb-event-kit": "^3.0.0",
     "sb-react-table": "^1.0.1"
   },
   "description": "Default UI for the Linter package",
   "devDependencies": {
     "eslint-config-steelbrain": "^3.0.0",
-    "flow-bin": "^0.42.0",
+    "flow-bin": "^0.43.0",
     "jasmine-fix": "^1.0.1",
     "rimraf": "^2.5.4"
   },
@@ -230,5 +229,5 @@
   "scripts": {
     "test": "(apm test) && (flow check) && (eslint . )"
   },
-  "version": "1.2.2"
+  "version": "1.2.3"
 }

@@ -7,7 +7,7 @@ import { visitMessage, openExternally } from '../helpers'
 import type TooltipDelegate from './delegate'
 import type { Message } from '../types'
 
-export default class MessageElement extends React.Component {
+class MessageElement extends React.Component {
   props: {
     message: Message,
     delegate: TooltipDelegate,
@@ -89,12 +89,14 @@ export default class MessageElement extends React.Component {
           <span className="icon linter-icon icon-alignment-aligned-to" />
         </a>
       )}
-      <a href="#" onClick={() => openExternally(message)}>
+      { message.url && <a href="#" onClick={() => openExternally(message)}>
         <span className="icon linter-icon icon-link" />
-      </a>
+      </a>}
       { this.state.descriptionShow && (
         <div dangerouslySetInnerHTML={{ __html: this.state.description || 'Loading...' }} className="linter-line" />
       ) }
     </linter-message>)
   }
 }
+
+module.exports = MessageElement

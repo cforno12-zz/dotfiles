@@ -7,7 +7,7 @@ import { $range, severityNames, sortMessages, visitMessage, openExternally, getP
 import type Delegate from './delegate'
 import type { LinterMessage } from '../types'
 
-export default class PanelComponent extends React.Component {
+class PanelComponent extends React.Component {
   props: {
     delegate: Delegate,
   };
@@ -57,7 +57,7 @@ export default class PanelComponent extends React.Component {
     const columns = [
       { key: 'severity', label: 'Severity', sortable: true },
       { key: 'linterName', label: 'Provider', sortable: true },
-      { key: 'excerpt', label: 'Description' },
+      { key: 'excerpt', label: 'Description', onClick: this.onClick },
       { key: 'line', label: 'Line', sortable: true, onClick: this.onClick },
     ]
     if (delegate.panelRepresents === 'Entire Project') {
@@ -120,3 +120,5 @@ export default class PanelComponent extends React.Component {
     }
   }
 }
+
+module.exports = PanelComponent

@@ -1,9 +1,9 @@
 /* @flow */
 
-import { CompositeDisposable, Emitter } from 'sb-event-kit'
-import type { Disposable } from 'sb-event-kit'
+import { CompositeDisposable, Emitter } from 'atom'
+import type { Disposable } from 'atom'
 
-export default class TooltipDelegate {
+class TooltipDelegate {
   emitter: Emitter;
   expanded: boolean;
   subscriptions: CompositeDisposable;
@@ -59,3 +59,5 @@ export default class TooltipDelegate {
     this.emitter.dispose()
   }
 }
+
+module.exports = TooltipDelegate

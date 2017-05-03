@@ -1,12 +1,12 @@
 /* @flow */
 
-import { CompositeDisposable } from 'sb-event-kit'
+import { CompositeDisposable, Disposable } from 'atom'
 
 import Element from './element'
 import { $file } from '../helpers'
 import type { LinterMessage } from '../types'
 
-export default class StatusBar {
+class StatusBar {
   element: Element;
   messages: Array<LinterMessage>;
   subscriptions: CompositeDisposable;
@@ -91,13 +91,15 @@ export default class StatusBar {
         priority: statusBarPosition === 'Left' ? 0 : 1000,
       })
     }))
-    this.subscriptions.add(function() {
+    this.subscriptions.add(new Disposable(function() {
       if (statusBar) {
         statusBar.destroy()
       }
-    })
+    }))
   }
   dispose() {
     this.subscriptions.dispose()
   }
 }
+
+module.exports = StatusBar

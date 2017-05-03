@@ -38,15 +38,12 @@
     preferredFormat: "HEX"
   core:
     allowPendingPaneItems: false
-    disabledPackages: [
-      "minimap"
-    ]
     telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
       "solarized-dark-syntax"
     ]
-    useCustomTitleBar: true
+    titleBar: "custom"
     warnOnLargeFileLimit: 10
   editor:
     backUpBeforeSaving: true

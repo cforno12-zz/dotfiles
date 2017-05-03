@@ -1,9 +1,9 @@
 /* @flow */
 
-import { CompositeDisposable } from 'sb-event-kit'
+import { CompositeDisposable } from 'atom'
 import type { Linter } from './types'
 
-export default class BusySignal {
+class BusySignal {
   provider: ?Object;
   executing: Set<{
     linter: Linter,
@@ -75,3 +75,5 @@ export default class BusySignal {
     this.subscriptions.dispose()
   }
 }
+
+module.exports = BusySignal

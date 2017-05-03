@@ -185,6 +185,7 @@ buildOptionsForBeautifiers = function(beautifiers, allLanguages) {
         type: 'object',
         description: "Options for language " + lang.name,
         collapsed: true,
+        scope: lang.scope,
         beautifiers: [],
         grammars: lang.grammars,
         extensions: lang.extensions,
@@ -215,7 +216,7 @@ buildOptionsForBeautifiers = function(beautifiers, allLanguages) {
     if (_.isArray(objValue)) {
       return _.uniq(objValue.concat(srcValue));
     }
-  } 
+  }
   for (j = 0, len1 = allLanguages.length; j < len1; j++) {
     lang = allLanguages[j];
     namespaceDest = lang.namespace;
