@@ -63,11 +63,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-export EDITOR='vim'
+export EDITOR='emacs'
 
 #FORNO aliases
 alias docs="cd Documents"
-alias 220="cd Documents/CS_220"
+alias 240="cd Documents/CS240-Fall17"
 alias sshBing="ssh cforno1@remote.cs.binghamton.edu"
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 alias screenfetch="screenfetch -E"

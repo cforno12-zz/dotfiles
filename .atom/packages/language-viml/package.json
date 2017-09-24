@@ -2,40 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-11735-23274-9jyf75/package.tgz",
+        "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-117823-32456-170p1v3.hmk4cp7gb9/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-11735-23274-9jyf75/package.tgz",
-        "spec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-11735-23274-9jyf75/package.tgz",
+        "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-117823-32456-170p1v3.hmk4cp7gb9/package.tgz",
+        "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-117823-32456-170p1v3.hmk4cp7gb9/package.tgz",
         "type": "local"
       },
-      "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/apm-install-dir-11735-23274-qa35s6"
+      "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-117823-32456-1fuoj9v.h0xic6jemi"
     ]
   ],
-  "_from": "../d-11735-23274-9jyf75/package.tgz",
-  "_id": "language-viml@1.1.3",
+  "_from": "../d-117823-32456-170p1v3.hmk4cp7gb9/package.tgz",
+  "_id": "language-viml@1.1.5",
   "_inCache": true,
-  "_installable": true,
   "_location": "/language-viml",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-11735-23274-9jyf75/package.tgz",
+    "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-117823-32456-170p1v3.hmk4cp7gb9/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-11735-23274-9jyf75/package.tgz",
-    "spec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-11735-23274-9jyf75/package.tgz",
+    "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-117823-32456-170p1v3.hmk4cp7gb9/package.tgz",
+    "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-117823-32456-170p1v3.hmk4cp7gb9/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11735-23274-9jyf75/package.tgz",
-  "_shasum": "b319ebf9dbed774f635ee470181392daf9ef0380",
+  "_resolved": "file:../d-117823-32456-170p1v3.hmk4cp7gb9/package.tgz",
+  "_shasum": "6e03ef6672c02fbea49afb685dab23f385af0f82",
   "_shrinkwrap": null,
-  "_spec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-11735-23274-9jyf75/package.tgz",
-  "_where": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/apm-install-dir-11735-23274-qa35s6",
+  "_spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-117823-32456-170p1v3.hmk4cp7gb9/package.tgz",
+  "_where": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-117823-32456-1fuoj9v.h0xic6jemi",
   "author": {
     "name": "Evan Hahn"
   },
@@ -60,7 +59,7 @@
   "maintainers": [
     {
       "name": "John Gardner",
-      "email": "<gardnerjohng@gmail.com",
+      "email": "gardnerjohng@gmail.com",
       "url": "https://github.com/Alhadis"
     }
   ],
@@ -72,6 +71,15 @@
     "type": "git",
     "url": "git+https://github.com/Alhadis/language-viml.git"
   },
-  "version": "1.1.3",
-  "vimSource": "https://raw.githubusercontent.com/vim/vim/master/runtime/syntax/vim.vim"
+  "version": "1.1.5",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
 }

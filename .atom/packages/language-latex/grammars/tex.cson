@@ -3,8 +3,11 @@
 'fileTypes': [
   'sty'
   'cls'
+  'dtx'
+  'ins'
   'bbx'
   'cbx'
+  'lco'
 ]
 'patterns': [
   {

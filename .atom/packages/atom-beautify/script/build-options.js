@@ -133,9 +133,9 @@ buildOptionsForBeautifiers = function(beautifiers, allLanguages) {
     return _.reduce(languageOptions, (function(result, optionDef, optionName) {
       optionDef.beautifiers = _.uniq(optionDef.beautifiers)
       if (optionDef.beautifiers.length > 0) {
-        optionDef.description = optionDef.description + " (Supported by " + (optionDef.beautifiers.join(', ')) + ")";
+        optionDef.description = (optionDef.description || "") + " (Supported by " + (optionDef.beautifiers.join(', ')) + ")";
       } else {
-        optionDef.description = optionDef.description + " (Not supported by any beautifiers)";
+        optionDef.description = (optionDef.description || "") + " (Not supported by any beautifiers)";
       }
       if (result[optionName] != null) {
         logger.warn("Duplicate option detected: ", optionName, optionDef);
@@ -170,6 +170,53 @@ buildOptionsForBeautifiers = function(beautifiers, allLanguages) {
     };
   }
   return flatOptions;
+};
+
+buildOptionsForExecutables = function(beautifiers) {
+  executables = _.chain(beautifiers)
+    .map((beautifier) => {
+      const executables = beautifier.executables || [];
+      executables.forEach((executable) => executable.beautifiers = [beautifier.name]);
+      return executables;
+    })
+    .flatten()
+    .value();
+
+  const properties = {}
+  _.forEach(executables, (executable) => {
+    const { name, cmd, beautifiers } = executable;
+    const key = cmd;
+    const option = {
+      key: key,
+      title: name,
+      type: "object",
+      collapsed: true,
+      description: `Options for ${name} executable.`,
+      // beautifiers,
+      properties: {
+        path: {
+          key: "path",
+          title: "Binary/Script Path",
+          type: "string",
+          default: "",
+          description: `Absolute path to the "${cmd}" executable's binary/script.`,
+        }
+      }
+    }
+    properties[key] = option;
+  });
+
+  const options = {
+    executables: {
+      title: 'Executables',
+      type: 'object',
+      collapsed: true,
+      order: -1,
+      description: 'Configure executables used by beautifiers.',
+      properties
+    }
+  }
+  return options
 };
 
 buildOptionsForBeautifiers = function(beautifiers, allLanguages) {
@@ -322,7 +369,7 @@ buildOptionsForBeautifiers = function(beautifiers, allLanguages) {
       optionDef = ref16[o];
       optionDef.beautifiers = _.uniq(optionDef.beautifiers)
       if (optionDef.beautifiers.length > 0) {
-        optionDef.description = optionDef.description + " (Supported by " + (optionDef.beautifiers.join(', ')) + ")";
+        optionDef.description = (optionDef.description || "") + " (Supported by " + (optionDef.beautifiers.join(', ')) + ")";
       } else {
         unsupportedOptions.push(g + ".properties." + o);
       }
@@ -374,10 +421,11 @@ beautifier = new Beautifiers();
 console.log('Building options for beautifiers');
 
 beautifierOptions = buildOptionsForBeautifiers(beautifier.beautifiers, beautifier.languages.languages);
+executableOptions = buildOptionsForExecutables(beautifier.beautifiers)
 
 console.log('Done building options for beautifiers');
-
-optionsStr = JSON.stringify(beautifierOptions, null, 2);
+combinedOptions = Object.assign({}, beautifierOptions, executableOptions)
+optionsStr = JSON.stringify(combinedOptions, null, 2);
 
 outputFilename = path.resolve(__dirname, '../src/options.json');
 

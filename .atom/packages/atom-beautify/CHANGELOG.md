@@ -1,3 +1,63 @@
+# Next
+- ...
+
+# v0.30.5 (2017-08-11)
+- Fix for [#1721](https://github.com/Glavin001/atom-beautify/issues/1721). Changes required due to TextBuffer.save becoming async in Atom 1.19
+- Fixes [#1638](https://github.com/Glavin001/atom-beautify/issues/1638). Update type-formatter and Fixes indent size not supported
+- See [#358](https://github.com/Glavin001/atom-beautify/issues/358). Add support for rustfmt-nightly
+
+# v0.30.4 (2017-07-14)
+- Fixes #1732. Improve deprecation message for old options for new Executables
+- Fixes #1751. Fix for latexindent v3
+
+# v0.30.3 (2017-06-21)
+- Improve command not found error message
+- Add goimports beautifier for Go language
+- Fixes [#1728](https://github.com/Glavin001/atom-beautify/issues/1728). Remove Shell-Env from Executable, use Atom's process.env instead. See [#1735](https://github.com/Glavin001/atom-beautify/pull/1735).
+
+# v0.30.2 (2017-06-20)
+- Fixes [#1030](https://github.com/Glavin001/atom-beautify/issues/1030). Add support for alpha versions of autopep8
+- Fixes [#1725](https://github.com/Glavin001/atom-beautify/issues/1725). Fix version parsing of PHP executable
+- Fixes [#1730](https://github.com/Glavin001/atom-beautify/issues/1730). Correctly parse PHPCBF version and improve handling of Executable
+
+# v0.30.1 (2017-06-19)
+- Fix [#1703](https://github.com/Glavin001/atom-beautify/issues/1703). Now Fortran 2003/2008 file extensions are available for Fortran beautifier.
+- Fix [#1030](https://github.com/Glavin001/atom-beautify/issues/1030). Autopep8 Executable did not handle older and newer versions.
+- Fixes [#1725](https://github.com/Glavin001/atom-beautify/issues/1725). Improve PHP-CS-Fixer support with handling script path
+  Detect if the executable path is either .phar (PHP) or not and
+  run the executable PHP-CS-Fixer differently considering.
+
+# v0.30.0 (2017-06-17)
+- Close [#1687](https://github.com/Glavin001/atom-beautify/issues/1687). Introducing Executables with Docker support! Executables wrap any non-preinstalled application, check if it is installed, and provide additional configuration options, including Docker support! See [#1687](https://github.com/Glavin001/atom-beautify/issues/1687) for more information.
+- Fix [#1652](https://github.com/Glavin001/atom-beautify/issues/1652) and [#1653](https://github.com/Glavin001/atom-beautify/issues/1653). Add `.rb` to temp files passed in to the `rubocop` executable so they are not excluded.
+- Fixes [#1361](https://github.com/Glavin001/atom-beautify/issues/1361). Add file extension to temporary files for Uncrustify beautifier
+- Fixed #1613 and #1588. Add EOL, scientific notation, and adjust whitespace support for Lua Beautifier
+
+# v0.29.26 (2017-05-28)
+- Fix #116. Switch from setText to setTextViaDiff, preserve folds
+- Add more perl filetypes (#1603)
+- Add more LaTeX extensions (#1617)
+- Don't specify file extension when requiring modules (#1631)
+- Update CSSComb to v4.0.1. (#1660)
+- Fix #1682. Removed --no-patch flag from phpcbf beautifier version 3 (#1683)
+- Fix [#1524](https://github.com/Glavin001/atom-beautify/issues/1524). Add PHP-CS-Fixer config file setting and improve automatic detection of standard config files. See [#1661](https://github.com/Glavin001/atom-beautify/pull/1661)
+- Add .php extension to temp files (#1649)
+- Add support for files with '.config' extension. Add extension to the XML language to support XML config files. (#1285)
+
+# v0.29.25 (2017-05-12)
+- Fix [#1547](https://github.com/Glavin001/atom-beautify/issues/1547), [#1630](https://github.com/Glavin001/atom-beautify/issues/1630). Update CSSComb to latest version.
+
+# v0.29.24 (2017-05-06)
+- Fix [#1643](https://github.com/Glavin001/atom-beautify/issues/1643). Add PHPCBF Version setting and remove "--no-patch" option from version 3.0 of PHPCBF. See [#1645](https://github.com/Glavin001/atom-beautify/pull/1645).
+- Close [#27](https://github.com/Glavin001/atom-beautify/issues/27). Add commands for beautifying a specific language
+- Add "Allow Risky" option for PHP-CS-Fixer. See [#1614](https://github.com/Glavin001/atom-beautify/pull/1614)
+- Set Yaml padding default value to 0, removing Atom warning message "'atom-beautify.yaml.padding' could not set the default."  See [#1647](https://github.com/Glavin001/atom-beautify/issues/1647).
+
+# v0.29.23 (2017-04-20)
+- See #1607. Add support for PHP-CS-Fixer 1, along with version 2.
+- Closes #1179. Replace atom-beautify.general.analytics option with configuration option
+- Add more LaTeX extensions
+
 # v0.29.3 to v0.29.22 (2016-04-16 to 2017-04-15)
 - Add support for additional wrap attribute options of js-beautify (html): force-aligned and force-expand-multiline.
 - Update to `remark`'s new API and fix [#1196](https://github.com/Glavin001/atom-beautify/issues/1196)
@@ -7,14 +67,13 @@
 - Add [clang-format](http://clang.llvm.org/docs/ClangFormat.html) beautifier for C/C++/Obj-C languages.
 - Add [yapf](http://github.com/google/yapf) beautifier for Python.
 - Add [ESLint](https://github.com/eslint/eslint) beautifier for Javascript
-- Closes [#776] (https://github.com/Glavin001/atom-beautify/issues/776) Add support for `collapse-preserve-inline` brace_style for javascript.
+- Closes [#776](https://github.com/Glavin001/atom-beautify/issues/776) Add support for `collapse-preserve-inline` brace_style for javascript.
 - Closes [#786](https://github.com/Glavin001/atom-beautify/issues/786) YAPF configuration files are ignored.
 - Fix phpcbf hanging issue by closing stdin. See [#893](https://github.com/Glavin001/atom-beautify/issues/893)
 - Add warning notification when parsing `.jsbeautifyrc` as JSON or YAML fails. See [#1106](https://github.com/Glavin001/atom-beautify/issues/1106)
 - Add support for PrettyDiff's *bracepadding* option in JavaScript. See [#1157](https://github.com/Glavin001/atom-beautify/issues/1157)
 - Closes [#447](https://github.com/Glavin001/atom-beautify/issues/447). Improved Handlebars language support
 - Closes [#384](https://github.com/Glavin001/atom-beautify/issues/384). Add [latexindent.pl](https://github.com/cmhughes/latexindent.pl) beautifier for LaTeX language
-
 
 # v0.29.2 (2016-04-08)
 - See #924. Add more verbose debugging to beautifyFilePath

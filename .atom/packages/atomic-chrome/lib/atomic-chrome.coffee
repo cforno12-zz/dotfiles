@@ -1,8 +1,5 @@
-{CompositeDisposable} = require 'atom'
-{Server}              = require 'ws'
-
-WSHandler             = require './ws-handler'
-
+{Server} = require 'ws'
+WSHandler = null # defer require till necessary
 WS_PORT = 64292
 
 module.exports = AtomicChrome =
@@ -10,9 +7,15 @@ module.exports = AtomicChrome =
     @wss = new Server({port: WS_PORT})
 
     @wss.on 'connection', (ws) ->
+      WSHandler ?= require './ws-handler'
       new WSHandler(ws)
     @wss.on 'error', (err) ->
       console.error(err) unless err.code == 'EADDRINUSE'
 
   deactivate: ->
     @wss.close()
+
+  config:
+    defaultExtension:
+      type: 'string'
+      default: '.md'

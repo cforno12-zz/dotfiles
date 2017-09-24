@@ -166,7 +166,7 @@ repository:
 	numbers:
 		patterns: [{
 			name: "constant.numeric.hex.viml"
-			match: "(?:#|0[xX])[0-9A-Fa-f]+"
+			match: "0[xX][0-9A-Fa-f]+"
 		},{
 			name: "constant.numeric.float.exponential.viml"
 			match: "(?<!\\w)-?\\d+\\.\\d+[eE][-+]?\\d+"
@@ -539,7 +539,7 @@ repository:
 
 
 	# The following lists are auto-extracted from Vim's syntax file.
-	# Run `tools/update` to repopulate them.
+	# Run `bin/update` to repopulate them.
 	keywordLists:
 		patterns: [
 			{include: "#vimTodo"}
@@ -633,7 +633,7 @@ repository:
 
 	vimHiAttrib:
 		name: "support.function.vimHiAttrib.viml"
-		match: "\\b(bold|inverse|italic|none|reverse|standout|undercurl|underline)\\b"
+		match: "\\b(bold|inverse|italic|nocombine|none|reverse|standout|undercurl|underline)\\b"
 
 	vimHiClear:
 		name: "support.function.vimHiClear.viml"

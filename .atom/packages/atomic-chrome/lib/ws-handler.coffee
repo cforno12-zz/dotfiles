@@ -13,11 +13,12 @@ module.exports = class WSHandler
 
   register: (data) ->
     filepath = @getFile(data)
+    atom.focus() # activivate Atom application
     atom.workspace.open(filepath).then (editor) =>
       @initEditor(editor, data)
 
   getFile: (data) ->
-    extension = data.extension ? '.md'
+    extension = data.extension ? atom.config.get('atomic-chrome.defaultExtension')
     temp.path {prefix: "#{data.title}-", suffix: extension}
 
   initEditor: (editor, data) ->
@@ -30,10 +31,11 @@ module.exports = class WSHandler
       @ignoreChanges = false
 
   sendChanges: ->
+    lines = @editor.getBuffer().lines || @editor.getBuffer().getLines()
     message =
       type: 'updateText'
       payload:
-        text: @editor.getBuffer().lines.join('\n')
+        text: lines.join('\n')
     @ws.send JSON.stringify(message)
 
   updateText: (data) ->
