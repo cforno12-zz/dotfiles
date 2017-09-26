@@ -70,7 +70,7 @@ alias docs="cd Documents"
 alias 240="cd Documents/CS240-Fall17"
 alias sshBing="ssh cforno1@remote.cs.binghamton.edu"
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
-alias screenfetch="screenfetch -E"
+alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
 
 #More aliases
 function extract() {
