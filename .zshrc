@@ -2,6 +2,10 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
+if [[ $platform == darwin ]]; then
+	  export PATH=/usr/local/bin:$PATH
+    # env SHELL=/bin/bash emacs
+fi
 export PATH=/usr/local/bin:$PATH
 export ZSH="$HOME/dotfiles/oh-my-zsh"
 
@@ -133,7 +137,7 @@ alias gl='git log'
 alias glp5='git log -5 --pretty --oneline' # view your last 5 latest commits each on their own line
 alias glt='git log --all --graph --decorate --oneline --simplify-by-decoration' # pretty branch status
 alias glsw='git log -S' # search the commit history for the word puppy and display matching commits (glsw [word])
-alias gs='git status'
+# alias gs='git status'
 alias gd='git diff'
 alias gm='git commit -m'
 alias gam='git commit -am'
