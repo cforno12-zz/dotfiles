@@ -140,7 +140,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '("Hack"
                                :size 13
                                :weight normal
                                :width normal
@@ -340,8 +340,13 @@ you should place your code here."
   (global-hl-line-mode -1)
   ;; gets rid of helm-bookmark-map error
   (require 'helm-bookmark)
-  ;; changing the org-mode elllipse
+  ;; changing the org-mode ellipse
   (setq org-ellipsis "↴")
+  ;; set font and font size
+  (set-face-attribute 'default nil :font "Hack-15" )
+  (set-frame-font "Hack-15" nil t)
+  ;; sets frame to fullscreen
+  (add-to-list 'default-frame-alist '(fullscreen . maximized))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
