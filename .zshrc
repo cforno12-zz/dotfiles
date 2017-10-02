@@ -2,10 +2,6 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-if [[ $platform == darwin ]]; then
-	  export PATH=/usr/local/bin:$PATH
-    # env SHELL=/bin/bash emacs
-fi
 export PATH=/usr/local/bin:$PATH
 export ZSH="$HOME/dotfiles/oh-my-zsh"
 
