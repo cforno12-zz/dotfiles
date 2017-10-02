@@ -340,6 +340,8 @@ you should place your code here."
   (global-hl-line-mode -1)
   ;; gets rid of helm-bookmark-map error
   (require 'helm-bookmark)
+  ;; changing the org-mode elllipse
+  (setq org-ellipsis "↴")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
