@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:/Library/TeX/textbin:$PATH
 export ZSH="$HOME/dotfiles/oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
