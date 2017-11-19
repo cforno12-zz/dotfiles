@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-117823-32381-1o0ptcb.g5b0wtrzfr/package.tgz",
+        "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171015-11102-1spmihg.vcw8jdzpvi/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-117823-32381-1o0ptcb.g5b0wtrzfr/package.tgz",
-        "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-117823-32381-1o0ptcb.g5b0wtrzfr/package.tgz",
+        "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171015-11102-1spmihg.vcw8jdzpvi/package.tgz",
+        "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171015-11102-1spmihg.vcw8jdzpvi/package.tgz",
         "type": "local"
       },
-      "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-117823-32381-1gc6ibd.941l40a4i"
+      "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-1171015-11102-g22v5u.iaqsi6n7b9"
     ]
   ],
-  "_from": "../d-117823-32381-1o0ptcb.g5b0wtrzfr/package.tgz",
-  "_id": "atomic-chrome@0.3.2",
+  "_from": "../d-1171015-11102-1spmihg.vcw8jdzpvi/package.tgz",
+  "_id": "atomic-chrome@0.3.3",
   "_inCache": true,
   "_location": "/atomic-chrome",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-117823-32381-1o0ptcb.g5b0wtrzfr/package.tgz",
+    "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171015-11102-1spmihg.vcw8jdzpvi/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-117823-32381-1o0ptcb.g5b0wtrzfr/package.tgz",
-    "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-117823-32381-1o0ptcb.g5b0wtrzfr/package.tgz",
+    "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171015-11102-1spmihg.vcw8jdzpvi/package.tgz",
+    "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171015-11102-1spmihg.vcw8jdzpvi/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117823-32381-1o0ptcb.g5b0wtrzfr/package.tgz",
-  "_shasum": "ee9ce765826b97dcc3c6e1777e43b5ce1e4a69fb",
+  "_resolved": "file:../d-1171015-11102-1spmihg.vcw8jdzpvi/package.tgz",
+  "_shasum": "9362e8de1d3fd06f688da4f938c6b091ce660735",
   "_shrinkwrap": null,
-  "_spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-117823-32381-1o0ptcb.g5b0wtrzfr/package.tgz",
-  "_where": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-117823-32381-1gc6ibd.941l40a4i",
+  "_spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171015-11102-1spmihg.vcw8jdzpvi/package.tgz",
+  "_where": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-1171015-11102-g22v5u.iaqsi6n7b9",
   "bugs": {
     "url": "https://github.com/tuvistavie/atomic-chrome-atom/issues"
   },
@@ -59,118 +59,5 @@
     "type": "git",
     "url": "git+https://github.com/tuvistavie/atomic-chrome-atom.git"
   },
-  "version": "0.3.2",
-  "_atomModuleCache": {
-    "version": 1,
-    "dependencies": [
-      {
-        "name": "options",
-        "version": "0.0.6",
-        "path": "node_modules/options/lib/options.js"
-      },
-      {
-        "name": "os-tmpdir",
-        "version": "1.0.2",
-        "path": "node_modules/os-tmpdir/index.js"
-      },
-      {
-        "name": "rimraf",
-        "version": "2.2.8",
-        "path": "node_modules/rimraf/rimraf.js"
-      },
-      {
-        "name": "temp",
-        "version": "0.8.3",
-        "path": "node_modules/temp/lib/temp.js"
-      },
-      {
-        "name": "ultron",
-        "version": "1.0.2",
-        "path": "node_modules/ultron/index.js"
-      },
-      {
-        "name": "ws",
-        "version": "1.1.4",
-        "path": "node_modules/ws/index.js"
-      }
-    ],
-    "extensions": {
-      ".coffee": [
-        "lib/atomic-chrome.coffee",
-        "lib/ws-handler.coffee"
-      ],
-      ".js": [
-        "node_modules/options/lib/options.js",
-        "node_modules/os-tmpdir/index.js",
-        "node_modules/rimraf/bin.js",
-        "node_modules/rimraf/rimraf.js",
-        "node_modules/temp/examples/grepcount.js",
-        "node_modules/temp/examples/pdfcreator.js",
-        "node_modules/temp/lib/temp.js",
-        "node_modules/temp/no_cleanup.js",
-        "node_modules/temp/no_cleanup_on_exit.js",
-        "node_modules/temp/no_cleanup_on_exit.spec.js",
-        "node_modules/ultron/index.js",
-        "node_modules/ultron/test.js",
-        "node_modules/ws/index.js",
-        "node_modules/ws/lib/BufferPool.js",
-        "node_modules/ws/lib/BufferUtil.fallback.js",
-        "node_modules/ws/lib/BufferUtil.js",
-        "node_modules/ws/lib/ErrorCodes.js",
-        "node_modules/ws/lib/Extensions.js",
-        "node_modules/ws/lib/PerMessageDeflate.js",
-        "node_modules/ws/lib/Receiver.hixie.js",
-        "node_modules/ws/lib/Receiver.js",
-        "node_modules/ws/lib/Sender.hixie.js",
-        "node_modules/ws/lib/Sender.js",
-        "node_modules/ws/lib/Validation.fallback.js",
-        "node_modules/ws/lib/Validation.js",
-        "node_modules/ws/lib/WebSocket.js",
-        "node_modules/ws/lib/WebSocketServer.js"
-      ],
-      ".json": [
-        "node_modules/options/package.json",
-        "node_modules/os-tmpdir/package.json",
-        "node_modules/rimraf/package.json",
-        "node_modules/temp/package.json",
-        "node_modules/ultron/package.json",
-        "node_modules/ws/package.json",
-        "package.json"
-      ]
-    },
-    "folders": [
-      {
-        "paths": [
-          "lib",
-          ""
-        ],
-        "dependencies": {
-          "temp": "^0.8.3",
-          "ws": "^1.0.1"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/temp/examples",
-          "node_modules/temp/lib",
-          "node_modules/temp",
-          "node_modules/temp/test"
-        ],
-        "dependencies": {
-          "os-tmpdir": "^1.0.0",
-          "rimraf": "~2.2.6"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/ws",
-          "node_modules/ws/lib"
-        ],
-        "dependencies": {
-          "options": ">=0.0.5",
-          "ultron": "1.0.x"
-        }
-      }
-    ]
-  }
+  "version": "0.3.3"
 }
