@@ -48,7 +48,7 @@ suite('TeletypePackage', function () {
     containerElement.remove()
 
     for (const pack of packages) {
-      await pack.dispose()
+      await pack.deactivate()
     }
     await destroyAtomEnvironments()
   })
@@ -204,68 +204,58 @@ suite('TeletypePackage', function () {
       'valid-token': {login: 'defunkt'}
     })
 
-    const env1 = buildAtomEnvironment()
-    const env2 = buildAtomEnvironment()
+    const env = buildAtomEnvironment()
     // Ensure errors make the test fail instead of showing a notification.
-    env1.notifications.addError = (message) => { throw new Error(message) }
-    env2.notifications.addError = (message) => { throw new Error(message) }
+    env.notifications.addError = (message) => { throw new Error(message) }
 
-    const pack1 = await buildPackage(env1, {signIn: false})
-    await pack1.consumeStatusBar(new FakeStatusBar())
-    const pack2 = await buildPackage(env2, {signIn: false})
-    await pack2.consumeStatusBar(new FakeStatusBar())
+    const pack = await buildPackage(env, {signIn: false})
+    await pack.consumeStatusBar(new FakeStatusBar())
 
-    {
-      assert(!pack1.portalStatusBarIndicator.isPopoverVisible())
-      assert(!await pack1.sharePortal())
-      assert(pack1.portalStatusBarIndicator.isPopoverVisible())
+    // Show popover when running the "Share Portal" command, but prevent sharing unless user is authenticated.
+    assert(!pack.portalStatusBarIndicator.isPopoverVisible())
+    assert(!await pack.sharePortal())
+    assert(pack.portalStatusBarIndicator.isPopoverVisible())
 
-      const {popoverComponent} = pack1.portalStatusBarIndicator
-      assert(popoverComponent.refs.signInComponent)
-      assert(!popoverComponent.refs.portalListComponent)
+    // Show popover when running the "Join Portal" command, but prevent sharing unless user is authenticated.
+    pack.portalStatusBarIndicator.hidePopover()
+    assert(!pack.portalStatusBarIndicator.isPopoverVisible())
+    assert(!await pack.joinPortal('some-portal-id'))
+    assert(pack.portalStatusBarIndicator.isPopoverVisible())
 
-      // Enter an invalid token and wait for error message to appear.
-      popoverComponent.refs.signInComponent.refs.editor.setText('invalid-token')
-      popoverComponent.refs.signInComponent.signIn()
-      await condition(() => (
-        popoverComponent.refs.signInComponent.props.invalidToken &&
-        popoverComponent.refs.signInComponent.refs.editor
-      ))
+    const {popoverComponent} = pack.portalStatusBarIndicator
+    assert(popoverComponent.refs.signInComponent)
+    assert(!popoverComponent.refs.portalListComponent)
 
-      // Show portal list component after entering a valid token.
-      popoverComponent.refs.signInComponent.refs.editor.setText('valid-token')
-      popoverComponent.refs.signInComponent.signIn()
-      await condition(() => (
-        !popoverComponent.refs.signInComponent &&
-        popoverComponent.refs.portalListComponent
-      ))
-    }
+    // Enter an invalid token and wait for error message to appear.
+    popoverComponent.refs.signInComponent.refs.editor.setText('invalid-token')
+    popoverComponent.refs.signInComponent.signIn()
+    await condition(() => (
+      popoverComponent.refs.signInComponent.props.invalidToken &&
+      popoverComponent.refs.signInComponent.refs.editor
+    ))
+    assert.equal(await pack.credentialCache.get('oauth-token'), null)
+    assert(!env.workspace.element.classList.contains('teletype-Authenticated'))
 
-    {
-      assert(!pack2.portalStatusBarIndicator.isPopoverVisible())
-      assert(!await pack2.joinPortal('some-portal-id'))
-      assert(pack2.portalStatusBarIndicator.isPopoverVisible())
+    // Show portal list component after entering a valid token.
+    popoverComponent.refs.signInComponent.refs.editor.setText('valid-token')
+    popoverComponent.refs.signInComponent.signIn()
+    await condition(() => (
+      !popoverComponent.refs.signInComponent &&
+      popoverComponent.refs.portalListComponent
+    ))
+    assert.equal(await pack.credentialCache.get('oauth-token'), 'valid-token')
+    assert(env.workspace.element.classList.contains('teletype-Authenticated'))
 
-      const {popoverComponent} = pack2.portalStatusBarIndicator
-      assert(popoverComponent.refs.signInComponent)
-      assert(!popoverComponent.refs.portalListComponent)
-
-      // Enter an invalid token and wait for error message to appear.
-      popoverComponent.refs.signInComponent.refs.editor.setText('invalid-token')
-      popoverComponent.refs.signInComponent.signIn()
-      await condition(() => (
-        popoverComponent.refs.signInComponent.props.invalidToken &&
-        popoverComponent.refs.signInComponent.refs.editor
-      ))
-
-      // Show portal list component after entering a valid token.
-      popoverComponent.refs.signInComponent.refs.editor.setText('valid-token')
-      popoverComponent.refs.signInComponent.signIn()
-      await condition(() => (
-        !popoverComponent.refs.signInComponent &&
-        popoverComponent.refs.portalListComponent
-      ))
-    }
+    // Go back to sign in component after signing out.
+    pack.portalStatusBarIndicator.hidePopover()
+    pack.signOut()
+    await condition(() => (
+      popoverComponent.refs.signInComponent &&
+      !popoverComponent.refs.portalListComponent
+    ))
+    assert(pack.portalStatusBarIndicator.isPopoverVisible())
+    assert.equal(await pack.credentialCache.get('oauth-token'), null)
+    assert(!env.workspace.element.classList.contains('teletype-Authenticated'))
   })
 
   test('prompting for a portal ID when joining', async () => {
@@ -626,7 +616,7 @@ suite('TeletypePackage', function () {
     assert.equal(hostEditor.getText(), 'abcdefg')
   })
 
-  test('reverting to a checkpoint', async () => {
+  test('checkpoints', async () => {
     const hostEnv = buildAtomEnvironment()
     const hostPackage = await buildPackage(hostEnv)
     const hostEditor = await hostEnv.workspace.open()
@@ -645,6 +635,13 @@ suite('TeletypePackage', function () {
     hostEditor.insertText('j')
     assert.equal(hostEditor.getText(), 'abcdefghij')
     await editorsEqual(hostEditor, guestEditor)
+
+    const changesSinceCheckpoint = hostEditor.getBuffer().getChangesSinceCheckpoint(checkpoint)
+    assert.equal(changesSinceCheckpoint.length, 1)
+    assert.deepEqual(changesSinceCheckpoint[0].oldRange, {start: {row: 0, column: 7}, end: {row: 0, column: 7}})
+    assert.deepEqual(changesSinceCheckpoint[0].oldText, '')
+    assert.deepEqual(changesSinceCheckpoint[0].newRange, {start: {row: 0, column: 7}, end: {row: 0, column: 10}})
+    assert.deepEqual(changesSinceCheckpoint[0].newText, 'hij')
 
     hostEditor.revertToCheckpoint(checkpoint)
     assert.equal(hostEditor.getText(), 'abcdefg')
@@ -882,15 +879,12 @@ suite('TeletypePackage', function () {
   })
 
   test('reports errors attempting to initialize the client', async () => {
-    const env = buildAtomEnvironment()
-    const pack = await buildPackage(env, {signIn: false})
-    pack.client.initialize = async function () {
-      await Promise.resolve()
-      throw new Error('an error')
-    }
-
     {
-      env.notifications.clear()
+      const env = buildAtomEnvironment()
+      const pack = await buildPackage(env, {signIn: false})
+      pack.client.initialize = async function () {
+        throw new Error('an error')
+      }
 
       await pack.sharePortal()
 
@@ -903,7 +897,11 @@ suite('TeletypePackage', function () {
     }
 
     {
-      env.notifications.clear()
+      const env = buildAtomEnvironment()
+      const pack = await buildPackage(env, {signIn: false})
+      pack.client.initialize = async function () {
+        throw new Error('an error')
+      }
 
       await pack.joinPortal()
 
@@ -913,6 +911,27 @@ suite('TeletypePackage', function () {
       assert.equal(type, 'error')
       assert.equal(message, 'Failed to initialize the teletype package')
       assert(description.includes('an error'))
+    }
+
+    {
+      const env = buildAtomEnvironment()
+      const pack = await buildPackage(env, {signIn: false})
+      pack.client.initialize = async function () {
+        throw new Error('an error')
+      }
+
+      await pack.consumeStatusBar(new FakeStatusBar())
+
+      assert.equal(env.notifications.getNotifications().length, 1)
+      const {type, message, options} = env.notifications.getNotifications()[0]
+      const {description} = options
+      assert.equal(type, 'error')
+      assert.equal(message, 'Failed to initialize the teletype package')
+      assert(description.includes('an error'))
+
+      const {popoverComponent} = pack.portalStatusBarIndicator
+      assert(pack.portalStatusBarIndicator.element.classList.contains('initialization-error'))
+      assert(popoverComponent.refs.packageInitializationErrorComponent)
     }
   })
 

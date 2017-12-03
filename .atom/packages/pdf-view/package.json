@@ -1,0 +1,69 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171029-4025-1n70ict.s8rgmpwrk9/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171029-4025-1n70ict.s8rgmpwrk9/package.tgz",
+        "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171029-4025-1n70ict.s8rgmpwrk9/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-1171029-4025-1p86rbz.8foli35wmi"
+    ]
+  ],
+  "_from": "../d-1171029-4025-1n70ict.s8rgmpwrk9/package.tgz",
+  "_id": "pdf-view@0.61.0",
+  "_inCache": true,
+  "_location": "/pdf-view",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171029-4025-1n70ict.s8rgmpwrk9/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171029-4025-1n70ict.s8rgmpwrk9/package.tgz",
+    "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171029-4025-1n70ict.s8rgmpwrk9/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-1171029-4025-1n70ict.s8rgmpwrk9/package.tgz",
+  "_shasum": "6eb255766c25eb02666db1d301efa17e918c8531",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171029-4025-1n70ict.s8rgmpwrk9/package.tgz",
+  "_where": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-1171029-4025-1p86rbz.8foli35wmi",
+  "bugs": {
+    "url": "https://github.com/izuzak/atom-pdf-view/issues"
+  },
+  "dependencies": {
+    "atom-space-pen-views": "^2.0.3",
+    "fs-plus": "2.x",
+    "loophole": "1.1.0",
+    "node-ensure": "0.0.0",
+    "pdfjs-dist": "1.8.349",
+    "underscore-plus": "^1.6"
+  },
+  "description": "Atom PDF viewer based on PDF.js",
+  "deserializers": {
+    "PdfEditorDeserializer": "deserialize"
+  },
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "homepage": "https://github.com/izuzak/atom-pdf-view#readme",
+  "license": "MIT",
+  "main": "./lib/pdf-editor.js",
+  "name": "pdf-view",
+  "optionalDependencies": {},
+  "readme": "# PDF View package\n\nAdds support for viewing PDF files in Atom. Powered by [PDF.js](https://github.com/mozilla/pdf.js)\n\n![](https://cloud.githubusercontent.com/assets/38924/2875460/79a8fc56-d41c-11e3-8f32-31f71a47e0fb.png)\n\n## Features\n\n### Zooming\n\n|            | OSX                | Windows and Linux    |\n|------------|--------------------|----------------------|\n| Zoom in    | `cmd-=` or `cmd-+` | `ctrl-=` or `ctrl-+` |\n| Zoom out   | `cmd--` or `cmd-_` | `ctrl--` or `ctrl-_` |\n| Reset zoom | `cmd-0`            | `ctrl-0`             |\n\nYou can also zoom by holding `ctrl` and using the mouse wheel.\n\n### Status bar information\n\nShows the number of the current page and total page count.\n\n![](https://cloud.githubusercontent.com/assets/38924/3214330/a13c58a2-efac-11e3-85a5-c75f6d654058.png)\n\n### Go to page\n\nJump to a specific page by either clicking on the page count in the status bar or by executing the `Pdf View: Go To Page` command from the command palette.\n\n![](https://cloud.githubusercontent.com/assets/38924/3689767/ce223cce-1342-11e4-8b7b-b2e5bdbb3016.png)\n\n### SyncTeX\n\nFor PDF files created by TeX using the `--synctex=1` option, a click on the PDF\nwill take you to the corresponding source code. If the `synctex` command (part\nof modern TeX distributions) is in your PATH, this will work out of the box,\notherwise you can configure the path to the `synctex` binary in the settings.\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/izuzak/atom-pdf-view.git"
+  },
+  "version": "0.61.0"
+}

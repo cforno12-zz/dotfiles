@@ -8,15 +8,6 @@ class PortalStatusBarIndicator {
     this.subscriptions = new CompositeDisposable()
     this.element = buildElement(props)
     this.popoverComponent = new PopoverComponent(props)
-    this.tooltip = props.tooltipManager.add(
-      this.element,
-      {
-        item: this.popoverComponent,
-        class: 'TeletypePopoverTooltip',
-        trigger: 'click',
-        placement: 'top'
-      }
-    )
 
     if (props.portalBindingManager) {
       this.portalBindingManager = props.portalBindingManager
@@ -26,8 +17,35 @@ class PortalStatusBarIndicator {
     }
   }
 
+  attach () {
+    const PRIORITY_BETWEEN_BRANCH_NAME_AND_GRAMMAR = -40
+    this.tile = this.props.statusBar.addRightTile({
+      item: this,
+      priority: PRIORITY_BETWEEN_BRANCH_NAME_AND_GRAMMAR
+    })
+    this.tooltip = this.props.tooltipManager.add(
+      this.element,
+      {
+        item: this.popoverComponent,
+        class: 'TeletypePopoverTooltip',
+        trigger: 'click',
+        placement: 'top'
+      }
+    )
+  }
+
+  destroy () {
+    if (this.tile) this.tile.destroy()
+    if (this.tooltip) this.tooltip.dispose()
+    this.subscriptions.dispose()
+  }
+
   showPopover () {
     if (!this.isPopoverVisible()) this.element.click()
+  }
+
+  hidePopover () {
+    if (this.isPopoverVisible()) this.element.click()
   }
 
   isPopoverVisible () {
@@ -42,17 +60,13 @@ class PortalStatusBarIndicator {
       this.element.classList.remove('transmitting')
     }
   }
-
-  dispose () {
-    this.tooltip.dispose()
-    this.subscriptions.dispose()
-  }
 }
 
 function buildElement (props) {
   const anchor = document.createElement('a')
   anchor.classList.add('PortalStatusBarIndicator', 'inline-block')
   if (props.isClientOutdated) anchor.classList.add('outdated')
+  if (props.initializationError) anchor.classList.add('initialization-error')
 
   const icon = document.createElement('span')
   icon.classList.add('icon', 'icon-radio-tower')

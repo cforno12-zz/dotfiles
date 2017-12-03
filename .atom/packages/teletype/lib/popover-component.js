@@ -3,6 +3,7 @@ const $ = etch.dom
 const PortalListComponent = require('./portal-list-component')
 const SignInComponent = require('./sign-in-component')
 const PackageOutdatedComponent = require('./package-outdated-component')
+const PackageInitializationErrorComponent = require('./package-initialization-error-component')
 
 module.exports =
 class PopoverComponent {
@@ -20,8 +21,9 @@ class PopoverComponent {
 
   render () {
     const {
-      isClientOutdated, authenticationProvider, portalBindingManager,
-      commandRegistry, credentialCache, clipboard, workspace
+      isClientOutdated, initializationError,
+      authenticationProvider, portalBindingManager,
+      commandRegistry, credentialCache, clipboard, workspace, notificationManager
     } = this.props
 
     let activeComponent
@@ -30,13 +32,18 @@ class PopoverComponent {
         ref: 'packageOutdatedComponent',
         workspace
       })
+    } else if (initializationError) {
+      activeComponent = $(PackageInitializationErrorComponent, {
+        ref: 'packageInitializationErrorComponent'
+      })
     } else if (this.props.authenticationProvider.isSignedIn()) {
       activeComponent = $(PortalListComponent, {
         ref: 'portalListComponent',
         localUserIdentity: authenticationProvider.getIdentity(),
         portalBindingManager,
         clipboard,
-        commandRegistry
+        commandRegistry,
+        notificationManager
       })
     } else {
       activeComponent = $(SignInComponent, {

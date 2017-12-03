@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171015-11196-18nvpl6.jzijqhncdi/package.tgz",
+        "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171022-6401-1gxxkgg.c4mftotj4i/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171015-11196-18nvpl6.jzijqhncdi/package.tgz",
-        "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171015-11196-18nvpl6.jzijqhncdi/package.tgz",
+        "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171022-6401-1gxxkgg.c4mftotj4i/package.tgz",
+        "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171022-6401-1gxxkgg.c4mftotj4i/package.tgz",
         "type": "local"
       },
-      "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-1171015-11196-15p1m8i.cz7tceg66r"
+      "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-1171022-6401-lwr2sg.ehwha1yvi"
     ]
   ],
-  "_from": "../d-1171015-11196-18nvpl6.jzijqhncdi/package.tgz",
-  "_id": "teletype@0.1.1",
+  "_from": "../d-1171022-6401-1gxxkgg.c4mftotj4i/package.tgz",
+  "_id": "teletype@0.2.3",
   "_inCache": true,
   "_location": "/teletype",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171015-11196-18nvpl6.jzijqhncdi/package.tgz",
+    "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171022-6401-1gxxkgg.c4mftotj4i/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171015-11196-18nvpl6.jzijqhncdi/package.tgz",
-    "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171015-11196-18nvpl6.jzijqhncdi/package.tgz",
+    "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171022-6401-1gxxkgg.c4mftotj4i/package.tgz",
+    "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171022-6401-1gxxkgg.c4mftotj4i/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-1171015-11196-18nvpl6.jzijqhncdi/package.tgz",
-  "_shasum": "caf6003f39f9a1d0485444f0bc95b402602a4a7c",
+  "_resolved": "file:../d-1171022-6401-1gxxkgg.c4mftotj4i/package.tgz",
+  "_shasum": "9b3178cd60c1a0ea98e88403307426a94e140162",
   "_shrinkwrap": null,
-  "_spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171015-11196-18nvpl6.jzijqhncdi/package.tgz",
-  "_where": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-1171015-11196-15p1m8i.cz7tceg66r",
+  "_spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171022-6401-1gxxkgg.c4mftotj4i/package.tgz",
+  "_where": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-1171022-6401-lwr2sg.ehwha1yvi",
   "atomTestRunner": "./test/setup",
   "author": "",
   "bugs": {
@@ -54,6 +54,13 @@
       "type": "string",
       "default": "f119821248b7429bece3",
       "order": 2
+    },
+    "pusherCluster": {
+      "title": "Pusher cluster name",
+      "description": "This should only be changed for development purposes. Changes take effect on the next package activation.",
+      "type": "string",
+      "default": "mt1",
+      "order": 3
     }
   },
   "consumedServices": {
@@ -64,18 +71,18 @@
     }
   },
   "dependencies": {
-    "@atom/teletype-client": "^0.26.0",
+    "@atom/teletype-client": "^0.28.2",
     "etch": "^0.12.6"
   },
   "description": "Share your workspace with team members and collaborate on code in real time",
   "devDependencies": {
-    "@atom/teletype-server": "^0.16.0",
+    "@atom/teletype-server": "^0.17.0",
     "atom-mocha-test-runner": "^1.0.1",
     "deep-equal": "^1.0.1",
     "temp": "^0.8.3"
   },
   "engines": {
-    "atom": ">=1.21.0"
+    "atom": ">=1.22.0"
   },
   "homepage": "https://github.com/atom/teletype#readme",
   "keywords": [
@@ -97,5 +104,5 @@
   "scripts": {
     "test": "atom --test test"
   },
-  "version": "0.1.1"
+  "version": "0.2.3"
 }
