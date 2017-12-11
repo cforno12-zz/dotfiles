@@ -47,7 +47,7 @@
     warnOnLargeFileLimit: 10
   editor:
     backUpBeforeSaving: true
-    fontSize: 18
+    fontSize: 17
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
