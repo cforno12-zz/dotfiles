@@ -1,4 +1,6 @@
 const assert = require('assert')
+const fs = require('fs')
+const temp = require('temp')
 const {TextBuffer, Point} = require('atom')
 const BufferBinding = require('../lib/buffer-binding')
 
@@ -42,10 +44,67 @@ suite('BufferBinding', function () {
     assert.equal(bufferProxy.text, 'hello\nworld')
   })
 
+  test('flushes changes to disk when receiving a save request', async () => {
+    const buffer = new TextBuffer('hello\nworld')
+    // This line ensures saving works correctly even if the save function has been monkey-patched.
+    buffer.save = () => {}
+
+    const binding = new BufferBinding({buffer})
+    const bufferProxy = new FakeBufferProxy(binding, buffer.getText())
+    binding.setBufferProxy(bufferProxy)
+
+    // Calling binding.save with an in-memory buffer is ignored.
+    try {
+      await binding.save()
+    } catch (error) {
+      assert.ifError(error)
+    }
+
+    // Calling binding.save with an on-disk buffer flushes changes to disk.
+    const filePath = temp.path()
+    await buffer.saveAs(filePath)
+
+    buffer.setText('changed')
+    await binding.save()
+    assert.equal(fs.readFileSync(filePath, 'utf8'), 'changed')
+  })
+
+  suite('destroying the buffer', () => {
+    test('on the host, disposes the underlying buffer proxy', () => {
+      const buffer = new TextBuffer('')
+      const binding = new BufferBinding({buffer, isHost: true})
+      const bufferProxy = new FakeBufferProxy(binding, buffer.getText())
+      binding.setBufferProxy(bufferProxy)
+
+      buffer.destroy()
+      assert(bufferProxy.disposed)
+    })
+
+    test('on guests, disposes the buffer binding', () => {
+      const buffer = new TextBuffer('')
+      const binding = new BufferBinding({buffer, isHost: false})
+      const bufferProxy = new FakeBufferProxy(binding, buffer.getText())
+      binding.setBufferProxy(bufferProxy)
+
+      buffer.destroy()
+      assert(binding.disposed)
+      assert(!bufferProxy.disposed)
+    })
+  })
+
   class FakeBufferProxy {
     constructor (delegate, text) {
       this.delegate = delegate
       this.text = text
+      this.disposed = false
+    }
+
+    dispose () {
+      this.disposed = true
+    }
+
+    getHistory () {
+      return {undoStack: [], redoStack: [], nextCheckpointId: 1}
     }
 
     setTextInRange (oldStart, oldEnd, newText) {

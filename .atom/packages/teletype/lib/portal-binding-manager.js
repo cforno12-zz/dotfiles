@@ -18,14 +18,14 @@ class PortalBindingManager {
 
     if (this.hostPortalBindingPromise) {
       const disposePromise = this.hostPortalBindingPromise.then((portalBinding) => {
-        portalBinding.dispose()
+        portalBinding.close()
       })
       disposePromises.push(disposePromise)
     }
 
     this.promisesByGuestPortalId.forEach(async (portalBindingPromise) => {
       const disposePromise = portalBindingPromise.then((portalBinding) => {
-        if (portalBinding) portalBinding.dispose()
+        if (portalBinding) portalBinding.leave()
       })
       disposePromises.push(disposePromise)
     })
@@ -108,9 +108,9 @@ class PortalBindingManager {
 
   async getActiveGuestPortalBinding () {
     const activePaneItem = this.workspace.getActivePaneItem()
-    for (const [_, portalBindingPromise] of this.promisesByGuestPortalId) {
+    for (const [_, portalBindingPromise] of this.promisesByGuestPortalId) { // eslint-disable-line no-unused-vars
       const portalBinding = await portalBindingPromise
-      if (portalBinding.getActivePaneItem() === activePaneItem) {
+      if (portalBinding.hasPaneItem(activePaneItem)) {
         return portalBinding
       }
     }

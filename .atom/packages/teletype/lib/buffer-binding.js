@@ -1,16 +1,22 @@
-const {Point, Range} = require('atom')
+const {Range, TextBuffer} = require('atom')
 
 function doNothing () {}
 
 module.exports =
 class BufferBinding {
-  constructor ({buffer, didDispose}) {
+  constructor ({buffer, isHost, didDispose}) {
     this.buffer = buffer
+    this.saveBuffer = TextBuffer.prototype.save.bind(buffer)
+    this.isHost = isHost
     this.emitDidDispose = didDispose || doNothing
     this.pendingChanges = []
+    this.disposed = false
   }
 
   dispose () {
+    if (this.disposed) return
+
+    this.disposed = true
     this.buffer.restoreDefaultHistoryProvider(this.bufferProxy.getHistory(this.buffer.maxUndoEntries))
     this.buffer = null
     if (this.bufferDestroySubscription) this.bufferDestroySubscription.dispose()
@@ -24,7 +30,13 @@ class BufferBinding {
       this.pushChange(this.pendingChanges.shift())
     }
     this.pendingChanges = null
-    this.bufferDestroySubscription = this.buffer.onDidDestroy(() => bufferProxy.dispose())
+    this.bufferDestroySubscription = this.buffer.onDidDestroy(() => {
+      if (this.isHost) {
+        bufferProxy.dispose()
+      } else {
+        this.dispose()
+      }
+    })
   }
 
   setText (text) {
@@ -110,6 +122,10 @@ class BufferBinding {
   }
 
   enforceUndoStackSizeLimit () {}
+
+  save () {
+    if (this.buffer.getPath()) return this.saveBuffer()
+  }
 
   serialize (options) {
     return this.serializeUsingDefaultHistoryProviderFormat(options)

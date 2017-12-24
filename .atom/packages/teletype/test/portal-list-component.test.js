@@ -1,12 +1,13 @@
 const assert = require('assert')
-const etch = require('etch')
 const condition = require('./helpers/condition')
-const {Disposable} = require('atom')
 const FakeClipboard = require('./helpers/fake-clipboard')
 const {TeletypeClient} = require('@atom/teletype-client')
 const {startTestServer} = require('@atom/teletype-server')
 const PortalBindingManager = require('../lib/portal-binding-manager')
 const PortalListComponent = require('../lib/portal-list-component')
+const FakeNotificationManager = require('./helpers/fake-notification-manager')
+const FakeWorkspace = require('./helpers/fake-workspace')
+const FakeCommandRegistry = require('./helpers/fake-command-registry')
 
 suite('PortalListComponent', function () {
   if (process.env.CI) this.timeout(process.env.TEST_TIMEOUT_IN_MS)
@@ -88,7 +89,7 @@ suite('PortalListComponent', function () {
   })
 
   test('joining portals', async () => {
-    const {component, element, portalBindingManager} = await buildComponent()
+    const {component} = await buildComponent()
     const {joinPortalComponent, guestPortalBindingsContainer} = component.refs
 
     assert(joinPortalComponent.refs.joinPortalLabel)
@@ -244,33 +245,3 @@ suite('PortalListComponent', function () {
     return portalBindingManager
   }
 })
-
-class FakeWorkspace {
-  async open () {}
-
-  getElement () {
-    return document.createElement('div')
-  }
-
-  observeActiveTextEditor () {
-    return new Disposable(() => {})
-  }
-}
-
-class FakeNotificationManager {
-  constructor () {
-    this.errorCount = 0
-  }
-
-  addInfo () {}
-
-  addSuccess () {}
-
-  addError () {
-    this.errorCount++
-  }
-}
-
-class FakeCommandRegistry {
-  add () { return new Set() }
-}
