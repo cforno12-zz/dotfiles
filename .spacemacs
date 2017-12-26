@@ -10,7 +10,7 @@ values."
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
    ;; or `spacemacs'. (default 'spacemacs)
-   dotspacemacs-distribution 'spacemacs
+   dotspacemacs-distribution 'spacemacs-base
    ;; Lazy installation of layers (i.e. layers are installed only when a file
    ;; with a supported type is opened). Possible values are `all', `unused'
    ;; and `nil'. `unused' will lazy install only unused layers (i.e. layers
@@ -33,25 +33,21 @@ values."
    '(
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
+     ;; Uncomment some layer names and press
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-
-     ;; Languages
      html
      python
      c-c++
      java
-     ;; Other
      latex
      pdf-tools
      osx
-     helm
+     ivy
      auto-completion
      better-defaults
      emacs-lisp
      git
-     github
      markdown
      org
      (shell :variables
@@ -87,12 +83,12 @@ values."
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
-    ;; If non nil ELPA repositories are contacted via HTTPS whenever it's
-    ;; possible. Set it to nil if you have no way to use HTTPS in your
-    ;; environment, otherwise it is strongly recommended to let it set to t.
-    ;; This variable has no effect if Emacs is launched with the parameter
-    ;; `--insecure' which forces the value of this variable to nil.
-    ;; (default t)
+   ;; If non nil ELPA repositories are contacted via HTTPS whenever it's
+   ;; possible. Set it to nil if you have no way to use HTTPS in your
+   ;; environment, otherwise it is strongly recommended to let it set to t.
+   ;; This variable has no effect if Emacs is launched with the parameter
+   ;; `--insecure' which forces the value of this variable to nil.
+   ;; (default t)
    dotspacemacs-elpa-https t
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    dotspacemacs-elpa-timeout 5
@@ -142,8 +138,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state nil
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Hack"
-                               :size 16
+   dotspacemacs-default-font '("Source Code Pro"
+                               :size 13
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -302,7 +298,6 @@ values."
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
    ))
-
 (defun my-setup-indent (n)
   ;; java/c/c++
   (setq c-basic-offset n)
@@ -316,7 +311,6 @@ values."
   (setq web-mode-code-indent-offset n) ; web-mode, js code in html file
   (setq css-indent-offset n) ; css-mode
   )
-
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init', before layer configuration
@@ -324,10 +318,9 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  ;;indent spaces
   (my-setup-indent 4)
-  ;;eliminate path warning
-  (setq exec-path-from-shell-arguments '("-l"))
+  ;; if PATH warning comes back
+  ;; (setq exec-path-from-shell-arguments '("-l"))
   )
 
 (defun dotspacemacs/user-config ()
@@ -365,7 +358,7 @@ you should place your code here."
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (f dash-functional auctex-latexmk eclim s company-auctex auctex powerline smartparens evil flycheck company helm helm-core avy marshal markdown-mode projectile magit magit-popup git-commit with-editor async ht org-plus-contrib dash pandoc-mode ox-pandoc org-ref key-chord ivy helm-bibtex parsebib deft biblio biblio-core org-category-capture alert log4e gntp tablist pdf-tools yapfify xterm-color ws-butler winum which-key web-mode volatile-highlights vi-tilde-fringe uuidgen use-package unfill toc-org tagedit spotify spaceline smeargle slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder restart-emacs rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el pbcopy paradox osx-trash osx-dictionary orgit org-projectile org-present org-pomodoro org-download org-bullets open-junk-file neotree mwim multi-term move-text mmm-mode markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum live-py-mode linum-relative link-hint less-css-mode launchctl info+ indent-guide hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-spotify helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot github-search github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy flyspell-correct-helm flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dumb-jump disaster diff-hl cython-mode company-web company-statistics company-emacs-eclim company-c-headers company-anaconda column-enforce-mode color-theme-solarized cmake-mode clean-aindent-mode clang-format auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+    (spacemacs-theme orgit magit-gitflow evil-magit magit magit-popup let-alist auctex yapfify xterm-color web-mode unfill tagedit smeargle slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements pdf-tools tablist pbcopy osx-trash osx-dictionary org-projectile org-category-capture org-present org-plus-contrib org-pomodoro alert log4e gntp org-download mwim multi-term mmm-mode markdown-toc markdown-mode live-py-mode less-css-mode launchctl hy-mode dash-functional htmlize haml-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter git-commit gh-md fuzzy flycheck-pos-tip pos-tip flycheck ghub with-editor eshell-z eshell-prompt-extras esh-help emmet-mode disaster diff-hl cython-mode company-web web-completion-data company-statistics company-emacs-eclim eclim company-c-headers company-auctex company-anaconda company color-theme-solarized color-theme cmake-mode clang-format auto-yasnippet yasnippet auctex-latexmk anaconda-mode pythonic f dash s ac-ispell auto-complete which-key wgrep use-package smex pcre2el macrostep ivy-hydra hydra help-fns+ helm-make projectile helm helm-core popup pkg-info epl flx exec-path-from-shell evil-visualstar evil-escape evil goto-chg undo-tree elisp-slime-nav diminish counsel-projectile counsel swiper ivy bind-map bind-key auto-compile packed async ace-window avy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

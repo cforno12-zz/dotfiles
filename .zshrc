@@ -155,6 +155,3 @@ alias gst='git stash' # stash git changes and put them into your list
 alias gdtp='git stash pop' # bring back your changes, but it removes them from your stash
 alias gchp='git cherry-pick' # cherry pick the committed code in your own branch (gchp [hash])
 alias gcln='git clean -xfd' # remove untracked files
-wd() {
-  . /Users/CrisForno/bin/wd/wd.sh
-}
