@@ -298,6 +298,7 @@ values."
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
    ))
+
 (defun my-setup-indent (n)
   ;; java/c/c++
   (setq c-basic-offset n)
@@ -311,6 +312,7 @@ values."
   (setq web-mode-code-indent-offset n) ; web-mode, js code in html file
   (setq css-indent-offset n) ; css-mode
   )
+
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init', before layer configuration
@@ -318,10 +320,13 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  ;; line indentation
   (my-setup-indent 4)
+
   ;; removes PATH warning
   (setq exec-path-from-shell-arguments '("-l"))
-  )
+
+)
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -330,21 +335,26 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
   ;; these three lines set the theme of spacemacs
   (set-terminal-parameter nil 'background-mode 'dark)
   (set-frame-parameter nil 'background-mode 'dark)
   (spacemacs/load-theme 'solarized)
-  ;; Disable current line highlight
-  (global-hl-line-mode -1)
-  ;; gets rid of helm-bookmark-map error
-  (require 'helm-bookmark)
-  ;; changing the org-mode ellipse
-  (setq org-ellipsis "⤵")
+
   ;; set cursor color to red
   (set-cursor-color "#ff0000")
+
   ;; blink cursor by default
   (blink-cursor-mode t)
-  )
+
+  ;;center cursor in the middle of the buffer
+  (centered-cursor-mode t)
+
+  ;;no line wrapping
+  (visual-line-mode t)
+
+)
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -358,7 +368,7 @@ you should place your code here."
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (airline-themes monokai-theme hc-zenburn-theme anti-zenburn-theme zenburn-theme ws-butler winum volatile-highlights vi-tilde-fringe uuidgen toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode paradox spinner org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-link spacemacs-theme orgit magit-gitflow evil-magit magit magit-popup let-alist auctex yapfify xterm-color web-mode unfill tagedit smeargle slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements pdf-tools tablist pbcopy osx-trash osx-dictionary org-projectile org-category-capture org-present org-plus-contrib org-pomodoro alert log4e gntp org-download mwim multi-term mmm-mode markdown-toc markdown-mode live-py-mode less-css-mode launchctl hy-mode dash-functional htmlize haml-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter git-commit gh-md fuzzy flycheck-pos-tip pos-tip flycheck ghub with-editor eshell-z eshell-prompt-extras esh-help emmet-mode disaster diff-hl cython-mode company-web web-completion-data company-statistics company-emacs-eclim eclim company-c-headers company-auctex company-anaconda company color-theme-solarized color-theme cmake-mode clang-format auto-yasnippet yasnippet auctex-latexmk anaconda-mode pythonic f dash s ac-ispell auto-complete which-key wgrep use-package smex pcre2el macrostep ivy-hydra hydra help-fns+ helm-make projectile helm helm-core popup pkg-info epl flx exec-path-from-shell evil-visualstar evil-escape evil goto-chg undo-tree elisp-slime-nav diminish counsel-projectile counsel swiper ivy bind-map bind-key auto-compile packed async ace-window avy))))
+    (vline crosshairs centered-cursor-mode airline-themes monokai-theme hc-zenburn-theme anti-zenburn-theme zenburn-theme ws-butler winum volatile-highlights vi-tilde-fringe uuidgen toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode paradox spinner org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-link spacemacs-theme orgit magit-gitflow evil-magit magit magit-popup let-alist auctex yapfify xterm-color web-mode unfill tagedit smeargle slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements pdf-tools tablist pbcopy osx-trash osx-dictionary org-projectile org-category-capture org-present org-plus-contrib org-pomodoro alert log4e gntp org-download mwim multi-term mmm-mode markdown-toc markdown-mode live-py-mode less-css-mode launchctl hy-mode dash-functional htmlize haml-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter git-commit gh-md fuzzy flycheck-pos-tip pos-tip flycheck ghub with-editor eshell-z eshell-prompt-extras esh-help emmet-mode disaster diff-hl cython-mode company-web web-completion-data company-statistics company-emacs-eclim eclim company-c-headers company-auctex company-anaconda company color-theme-solarized color-theme cmake-mode clang-format auto-yasnippet yasnippet auctex-latexmk anaconda-mode pythonic f dash s ac-ispell auto-complete which-key wgrep use-package smex pcre2el macrostep ivy-hydra hydra help-fns+ helm-make projectile helm helm-core popup pkg-info epl flx exec-path-from-shell evil-visualstar evil-escape evil goto-chg undo-tree elisp-slime-nav diminish counsel-projectile counsel swiper ivy bind-map bind-key auto-compile packed async ace-window avy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
