@@ -25,29 +25,29 @@
   "block-cursor":
     global:
       blinkOff:
-        backgroundColor: "#000000"
-        borderColor: "#ff2600"
-        borderStyle: "underline"
+        backgroundColor: "#002b37"
+        borderColor: "#ff0000"
+        borderStyle: "bordered-box"
       blinkOn:
         backgroundColor: "#ff2600"
         borderColor: "#ff2600"
         borderStyle: "bordered-box"
       cursorLineFix: true
-      pulseDuration: 5
+      pulseDuration: 1
   "color-picker":
     preferredFormat: "HEX"
   core:
     allowPendingPaneItems: false
+    audioBeep: false
     telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
       "solarized-dark-syntax"
     ]
-    titleBar: "custom"
+    titleBar: "custom-inset"
     warnOnLargeFileLimit: 10
   editor:
     backUpBeforeSaving: true
-    fontSize: 17
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
@@ -63,6 +63,7 @@
   minimap:
     absoluteMode: true
     adjustAbsoluteModeHeight: true
+  "no-title-bar": {}
   "open-recent":
     listDirectoriesAddedToProject: true
   "tree-view":

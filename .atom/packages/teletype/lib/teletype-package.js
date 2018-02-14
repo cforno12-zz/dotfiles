@@ -9,12 +9,14 @@ module.exports =
 class TeletypePackage {
   constructor (options) {
     const {
-      workspace, notificationManager, commandRegistry, tooltipManager, clipboard,
-      credentialCache, pubSubGateway, pusherKey, pusherOptions, baseURL, tetherDisconnectWindow
+      baseURL, clipboard, commandRegistry, credentialCache, getAtomVersion,
+      notificationManager, packageManager, pubSubGateway, pusherKey,
+      pusherOptions, tetherDisconnectWindow, tooltipManager, workspace
     } = options
 
     this.workspace = workspace
     this.notificationManager = notificationManager
+    this.packageManager = packageManager
     this.commandRegistry = commandRegistry
     this.tooltipManager = tooltipManager
     this.clipboard = clipboard
@@ -22,6 +24,7 @@ class TeletypePackage {
     this.pusherKey = pusherKey
     this.pusherOptions = pusherOptions
     this.baseURL = baseURL
+    this.getAtomVersion = getAtomVersion
     this.tetherDisconnectWindow = tetherDisconnectWindow
     this.credentialCache = credentialCache || new CredentialCache()
     this.client = new TeletypeClient({
@@ -63,6 +66,8 @@ class TeletypePackage {
   }
 
   async deactivate () {
+    this.initializationError = null
+
     if (this.subscriptions) this.subscriptions.dispose() // Package is not activated in specs
     if (this.portalStatusBarIndicator) this.portalStatusBarIndicator.destroy()
 
@@ -127,7 +132,9 @@ class TeletypePackage {
       commandRegistry: this.commandRegistry,
       clipboard: this.clipboard,
       workspace: this.workspace,
-      notificationManager: this.notificationManager
+      notificationManager: this.notificationManager,
+      packageManager: this.packageManager,
+      getAtomVersion: this.getAtomVersion
     })
 
     this.portalStatusBarIndicator.attach()
@@ -235,10 +242,6 @@ class TeletypePackage {
         this.isClientOutdated = true
       } else {
         this.initializationError = error
-        this.notificationManager.addError('Failed to initialize the teletype package', {
-          description: `Establishing a teletype connection failed with error: <code>${error.message}</code>`,
-          dismissable: true
-        })
       }
     }
   }

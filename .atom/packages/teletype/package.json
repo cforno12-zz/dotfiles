@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171121-3097-1fuzlik.0mwr35wmi/package.tgz",
+        "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118111-19080-1irtfll.zvftc07ldi/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171121-3097-1fuzlik.0mwr35wmi/package.tgz",
-        "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171121-3097-1fuzlik.0mwr35wmi/package.tgz",
+        "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118111-19080-1irtfll.zvftc07ldi/package.tgz",
+        "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118111-19080-1irtfll.zvftc07ldi/package.tgz",
         "type": "local"
       },
-      "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-1171121-3097-1vu3d65.bu1tyy14i"
+      "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-118111-19080-1yeahcg.vimtq5xw29"
     ]
   ],
-  "_from": "../d-1171121-3097-1fuzlik.0mwr35wmi/package.tgz",
-  "_id": "teletype@0.4.0",
+  "_from": "../d-118111-19080-1irtfll.zvftc07ldi/package.tgz",
+  "_id": "teletype@0.7.0",
   "_inCache": true,
   "_location": "/teletype",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171121-3097-1fuzlik.0mwr35wmi/package.tgz",
+    "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118111-19080-1irtfll.zvftc07ldi/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171121-3097-1fuzlik.0mwr35wmi/package.tgz",
-    "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171121-3097-1fuzlik.0mwr35wmi/package.tgz",
+    "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118111-19080-1irtfll.zvftc07ldi/package.tgz",
+    "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118111-19080-1irtfll.zvftc07ldi/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-1171121-3097-1fuzlik.0mwr35wmi/package.tgz",
-  "_shasum": "bf2111e65a36998299964c8d663ea12430ec4dd8",
+  "_resolved": "file:../d-118111-19080-1irtfll.zvftc07ldi/package.tgz",
+  "_shasum": "0cc75ddf62052089a95b31648aef45c5562403c5",
   "_shrinkwrap": null,
-  "_spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-1171121-3097-1fuzlik.0mwr35wmi/package.tgz",
-  "_where": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-1171121-3097-1vu3d65.bu1tyy14i",
+  "_spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118111-19080-1irtfll.zvftc07ldi/package.tgz",
+  "_where": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-118111-19080-1yeahcg.vimtq5xw29",
   "atomTestRunner": "./test/setup",
   "author": "",
   "bugs": {
@@ -71,12 +71,12 @@
     }
   },
   "dependencies": {
-    "@atom/teletype-client": "^0.30.0",
+    "@atom/teletype-client": "^0.33.0",
     "etch": "^0.12.6"
   },
   "description": "Share your workspace with team members and collaborate on code in real time",
   "devDependencies": {
-    "@atom/teletype-server": "^0.17.0",
+    "@atom/teletype-server": "^0.18.0",
     "atom-mocha-test-runner": "^1.0.1",
     "deep-equal": "^1.0.1",
     "standard": "^10.0.3",
@@ -118,5 +118,5 @@
       "test/fixtures"
     ]
   },
-  "version": "0.4.0"
+  "version": "0.7.0"
 }
