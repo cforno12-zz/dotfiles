@@ -325,7 +325,17 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (my-setup-indent 4)
 
   ;; removes PATH warning
-  (setq exec-path-from-shell-arguments '("-l"))
+  ;;(setq exec-path-from-shell-arguments '("-l"))
+
+  ;;Keybindings
+
+  ;;M-x to C-x C-m
+  (define-key evil-insert-state-map (kbd "\C-x\C-m") 'execute-extended-command)
+
+  ;;kill word that was just typed
+  (define-key evil-insert-state-map (kbd "\C-w") 'backward-kill-word)
+
+
 
 )
 

@@ -2,7 +2,8 @@
 
 const path = require('path')
 const {Range, Emitter, Disposable, CompositeDisposable} = require('atom')
-const normalizeURI = require('./normalize-uri')
+const getPathWithNativeSeparators = require('./get-path-with-native-separators')
+const getEditorURI = require('./get-editor-uri')
 const {FollowState} = require('@atom/teletype-client')
 
 module.exports =
@@ -28,7 +29,6 @@ class EditorBinding {
 
     this.markerLayersBySiteId.forEach((l) => l.destroy())
     this.markerLayersBySiteId.clear()
-    if (!this.isHost) this.restoreOriginalEditorMethods(this.editor)
     if (this.localCursorLayerDecoration) this.localCursorLayerDecoration.destroy()
 
     this.emitter.emit('did-dispose')
@@ -37,11 +37,8 @@ class EditorBinding {
 
   setEditorProxy (editorProxy) {
     this.editorProxy = editorProxy
-    if (this.isHost) {
-      this.editor.onDidDestroy(() => this.editorProxy.dispose())
-    } else {
+    if (!this.isHost) {
       this.monkeyPatchEditorMethods(this.editor, this.editorProxy)
-      this.editor.onDidDestroy(() => this.dispose())
     }
 
     this.localCursorLayerDecoration = this.editor.decorateMarkerLayer(
@@ -62,50 +59,29 @@ class EditorBinding {
 
   monkeyPatchEditorMethods (editor, editorProxy) {
     const buffer = editor.getBuffer()
-    const bufferProxy = editorProxy.bufferProxy
+    const {bufferProxy} = editorProxy
     const hostIdentity = this.portal.getSiteIdentity(1)
-    const uriPrefix = hostIdentity ? `@${hostIdentity.login}` : 'remote'
+    const prefix = hostIdentity ? `@${hostIdentity.login}` : 'remote'
+    const bufferURI = getPathWithNativeSeparators(bufferProxy.uri)
 
-    const bufferURI = normalizeURI(bufferProxy.uri)
-    editor.getTitle = () => `${uriPrefix}: ${path.basename(bufferURI)}`
-    editor.getURI = () => ''
+    editor.getTitle = () => `${prefix}: ${path.basename(bufferURI)}`
+    editor.getURI = () => getEditorURI(this.portal.id, editorProxy.id)
     editor.copy = () => null
     editor.serialize = () => null
     editor.isRemote = true
 
     let remoteEditorCountForBuffer = buffer.remoteEditorCount || 0
     buffer.remoteEditorCount = ++remoteEditorCountForBuffer
-    buffer.getPath = () => `${uriPrefix}:${bufferURI}`
+    buffer.getPath = () => `${prefix}:${bufferURI}`
     buffer.save = () => { bufferProxy.requestSave() }
     buffer.isModified = () => false
 
     editor.element.classList.add('teletype-RemotePaneItem')
   }
 
-  restoreOriginalEditorMethods (editor) {
-    const buffer = editor.getBuffer()
-
-    // Deleting the object-level overrides causes future calls to fall back
-    // to original methods stored on the prototypes of the editor and buffer
-    delete editor.getTitle
-    delete editor.getURI
-    delete editor.copy
-    delete editor.serialize
-    delete editor.isRemote
-
-    buffer.remoteEditorCount--
-    if (buffer.remoteEditorCount === 0) {
-      delete buffer.remoteEditorCount
-      delete buffer.getPath
-      delete buffer.save
-      delete buffer.isModified
-    }
-
-    editor.element.classList.remove('teletype-RemotePaneItem')
-    editor.emitter.emit('did-change-title', editor.getTitle())
-  }
-
   observeMarker (marker, relay = true) {
+    if (marker.isDestroyed()) return
+
     const didChangeDisposable = marker.onDidChange(({textChanged}) => {
       if (textChanged) {
         if (marker.getRange().isEmpty()) marker.clearTail()
