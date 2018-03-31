@@ -1,0 +1,1 @@
+{"source":"fonts-fixer {\n  font-size: 1px;\n  width: 0;\n  height: 0;\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\nfonts-fixer b {\n  font-weight: bold;\n}\nfonts-fixer i {\n  font-style: italic;\n}\n"}
