@@ -1,0 +1,1 @@
+{"source":"fonts-fixer,\natom-text-editor {\n  font-family: var(--fonts-package-editorfont);\n}\n"}
