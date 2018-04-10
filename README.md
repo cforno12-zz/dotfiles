@@ -2,5 +2,7 @@
 
 ## Run these commands into the shell
 
-> set -o emacs
-> setxkbmap -layout us -option ctrl:nocaps
+'''bash
+$ set -o emacs
+$ setxkbmap -layout us -option ctrl:nocaps
+'''
