@@ -2,7 +2,7 @@
 
 ## Run these commands into the shell
 
-'''bash
+```bash
 $ set -o emacs
 $ setxkbmap -layout us -option ctrl:nocaps
-'''
+```
