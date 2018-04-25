@@ -56,6 +56,11 @@ export default class PdfEditorView extends ScrollView {
       }
     }
 
+    let toggleNightModeCallback = () => {
+      this.setNightMode();
+    }
+
+    disposables.add(atom.config.onDidChange('pdf-view.nightMode', toggleNightModeCallback));
     disposables.add(atom.config.onDidChange('pdf-view.reverseSyncBehaviour', needsUpdateCallback));
 
     disposables.add(this.file.onDidChange(() => {
@@ -108,6 +113,11 @@ export default class PdfEditorView extends ScrollView {
     disposables.add(new Disposable(() => $(window).off('resize', resizeHandler)));
 
     atom.commands.add('atom-workspace', {
+      'pdf-view:zoom-fit': () => {
+        if (atom.workspace.getActivePaneItem() === this) {
+          this.zoomFit();
+        }
+      },
       'pdf-view:zoom-in': () => {
         if (atom.workspace.getActivePaneItem() === this) {
           this.zoomIn();
@@ -176,6 +186,14 @@ export default class PdfEditorView extends ScrollView {
         }
       }
     });
+  }
+
+  setNightMode() {
+    if (atom.config.get('pdf-view.nightMode')) {
+      this.addClass('night-mode');
+    } else {
+      this.removeClass('night-mode');
+    }
   }
 
   reverseSync(page, e) {
@@ -407,6 +425,8 @@ export default class PdfEditorView extends ScrollView {
         break
     }
 
+    this.setNightMode();
+
     PDFJS.getDocument(pdfData).then((pdfDocument) => {
       this.container.find("canvas").remove();
       this.canvases = [];
@@ -423,6 +443,8 @@ export default class PdfEditorView extends ScrollView {
           $(canvas).on(reverseSyncClicktype, (e) => this.reverseSync(pdfPageNumber, e));
         }
       }
+
+      this.maxPageWidth = 0;
 
       if (this.fitToWidthOnOpen) {
         Promise.all(
@@ -488,6 +510,28 @@ export default class PdfEditorView extends ScrollView {
       }
       Promise.all(renderTasks).then(() => this.finishUpdate());
     }, () => this.finishUpdate());
+  }
+
+  computeMaxPageWidthAndTryZoomFit(){
+    Promise.all(
+      _.range(1, this.pdfDocument.numPages + 1).map((pdfPageNumber) =>
+        this.pdfDocument.getPage(pdfPageNumber).then((pdfPage) =>
+          pdfPage.getViewport(1.0).width
+        )
+      )
+    ).then((pdfPageWidths) => {
+      this.maxPageWidth = Math.max(...pdfPageWidths);
+      this.zoomFit();
+    })
+  }
+
+  zoomFit() {
+    if (this.maxPageWidth == 0) {
+      this.computeMaxPageWidthAndTryZoomFit();
+      return;
+    }
+    let fitScale = this[0].clientWidth / this.maxPageWidth;
+    return this.adjustSize(fitScale / (this.currentScale *  this.toScaleFactor));
   }
 
   zoomOut() {

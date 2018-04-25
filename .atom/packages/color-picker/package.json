@@ -2,40 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-11711-1693-m19xu0/package.tgz",
+        "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118322-85272-1r37ofp.acynkit3xr/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-11711-1693-m19xu0/package.tgz",
-        "spec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-11711-1693-m19xu0/package.tgz",
+        "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118322-85272-1r37ofp.acynkit3xr/package.tgz",
+        "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118322-85272-1r37ofp.acynkit3xr/package.tgz",
         "type": "local"
       },
-      "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/apm-install-dir-11711-1693-p8a2u9"
+      "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-118322-85272-ek22gz.dhodxfajor"
     ]
   ],
-  "_from": "../d-11711-1693-m19xu0/package.tgz",
-  "_id": "color-picker@2.2.5",
+  "_from": "../d-118322-85272-1r37ofp.acynkit3xr/package.tgz",
+  "_id": "color-picker@2.3.0",
   "_inCache": true,
-  "_installable": true,
   "_location": "/color-picker",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-11711-1693-m19xu0/package.tgz",
+    "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118322-85272-1r37ofp.acynkit3xr/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-11711-1693-m19xu0/package.tgz",
-    "spec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-11711-1693-m19xu0/package.tgz",
+    "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118322-85272-1r37ofp.acynkit3xr/package.tgz",
+    "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118322-85272-1r37ofp.acynkit3xr/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11711-1693-m19xu0/package.tgz",
-  "_shasum": "92c2b23ff05ca222803fbf2955dce4cb9685efd3",
+  "_resolved": "file:../d-118322-85272-1r37ofp.acynkit3xr/package.tgz",
+  "_shasum": "11934e5069acd34b27a483b9de20cb359e6ba7b4",
   "_shrinkwrap": null,
-  "_spec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-11711-1693-m19xu0/package.tgz",
-  "_where": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/apm-install-dir-11711-1693-p8a2u9",
+  "_spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118322-85272-1r37ofp.acynkit3xr/package.tgz",
+  "_where": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-118322-85272-ek22gz.dhodxfajor",
   "bugs": {
     "url": "https://github.com/thomaslindstrom/color-picker/issues"
   },
@@ -69,5 +68,5 @@
     "type": "git",
     "url": "git+https://github.com/thomaslindstrom/color-picker.git"
   },
-  "version": "2.2.5"
+  "version": "2.3.0"
 }
