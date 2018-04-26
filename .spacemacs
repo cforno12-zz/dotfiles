@@ -323,7 +323,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (my-setup-indent 4)
 
   ;; removes PATH warning
-  ;;(setq exec-path-from-shell-arguments '("-l"))
+  (setq exec-path-from-shell-arguments '("-l"))
 
   ;;Keybindings
 
