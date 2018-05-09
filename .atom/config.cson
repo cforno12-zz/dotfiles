@@ -42,7 +42,7 @@
     telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
-      "solarized-dark-syntax"
+      "atom-dark-syntax"
     ]
     titleBar: "custom-inset"
     warnOnLargeFileLimit: 10
