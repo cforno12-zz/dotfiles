@@ -42,7 +42,7 @@ values."
      c-c++
      java
      latex
-     pdf-tools
+	 pdf-tools
      osx
      ivy
      better-defaults
