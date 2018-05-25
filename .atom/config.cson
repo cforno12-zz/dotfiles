@@ -39,6 +39,7 @@
   core:
     allowPendingPaneItems: false
     audioBeep: false
+    restorePreviousWindowsOnStart: "no"
     telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
