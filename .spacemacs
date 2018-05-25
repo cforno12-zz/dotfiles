@@ -36,13 +36,12 @@ values."
      ;; Uncomment some layer names and press
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     javascript
      html
      python
+     ruby
      c-c++
      java
-     latex
-	 pdf-tools
+	   pdf-tools
      osx
      ivy
      better-defaults
@@ -51,8 +50,8 @@ values."
      markdown
      org
      (shell :variables
-             shell-default-height 30
-             shell-default-position 'bottom)
+            shell-default-height 30
+            shell-default-position 'bottom)
      version-control
      )
    ;; list of additional packages that will be installed without being
@@ -310,6 +309,8 @@ values."
   (setq web-mode-css-indent-offset n) ; web-mode, css in html file
   (setq web-mode-code-indent-offset n) ; web-mode, js code in html file
   (setq css-indent-offset n) ; css-mode
+  ;; ruby
+  (setq ruby-indent-level n)
   )
 
 (defun dotspacemacs/user-init ()
@@ -319,6 +320,7 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
   ;; line indentation
   (my-setup-indent 4)
 
@@ -333,9 +335,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;;kill word that was just typed
   (global-set-key (kbd "\C-w") 'backward-kill-word)
 
-
-
-)
+  )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -363,7 +363,7 @@ you should place your code here."
   (setq ns-use-proxy-icon nil)
   (setq frame-title-format nil)
 
-)
+  )
 
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -375,7 +375,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
-   '(zen-and-art-theme white-sand-theme underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme rebecca-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme mustang-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme madhat2r-theme lush-theme light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme farmhouse-theme exotica-theme espresso-theme dracula-theme django-theme darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme ample-zen-theme ample-theme alect-themes afternoon-theme web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern tern coffee-mode org-mime ess-smart-equals ess-R-data-view ctable ess julia-mode vline crosshairs centered-cursor-mode airline-themes monokai-theme hc-zenburn-theme anti-zenburn-theme zenburn-theme ws-butler winum volatile-highlights vi-tilde-fringe uuidgen toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode paradox spinner org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-link spacemacs-theme orgit magit-gitflow evil-magit magit magit-popup let-alist auctex yapfify xterm-color web-mode unfill tagedit smeargle slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements pdf-tools tablist pbcopy osx-trash osx-dictionary org-projectile org-category-capture org-present org-plus-contrib org-pomodoro alert log4e gntp org-download mwim multi-term mmm-mode markdown-toc markdown-mode live-py-mode less-css-mode launchctl hy-mode dash-functional htmlize haml-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter git-commit gh-md fuzzy flycheck-pos-tip pos-tip flycheck ghub with-editor eshell-z eshell-prompt-extras esh-help emmet-mode disaster diff-hl cython-mode company-web web-completion-data company-statistics company-emacs-eclim eclim company-c-headers company-auctex company-anaconda company color-theme-solarized color-theme cmake-mode clang-format auto-yasnippet yasnippet auctex-latexmk anaconda-mode pythonic f dash s ac-ispell auto-complete which-key wgrep use-package smex pcre2el macrostep ivy-hydra hydra help-fns+ helm-make projectile helm helm-core popup pkg-info epl flx exec-path-from-shell evil-visualstar evil-escape evil goto-chg undo-tree elisp-slime-nav diminish counsel-projectile counsel swiper ivy bind-map bind-key auto-compile packed async ace-window avy)))
+   '(rainbow-mode zen-and-art-theme white-sand-theme underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme rebecca-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme mustang-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme madhat2r-theme lush-theme light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme farmhouse-theme exotica-theme espresso-theme dracula-theme django-theme darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme ample-zen-theme ample-theme alect-themes afternoon-theme web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern tern coffee-mode org-mime ess-smart-equals ess-R-data-view ctable ess julia-mode vline crosshairs centered-cursor-mode airline-themes monokai-theme hc-zenburn-theme anti-zenburn-theme zenburn-theme ws-butler winum volatile-highlights vi-tilde-fringe uuidgen toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode paradox spinner org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-link spacemacs-theme orgit magit-gitflow evil-magit magit magit-popup let-alist auctex yapfify xterm-color web-mode unfill tagedit smeargle slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements pdf-tools tablist pbcopy osx-trash osx-dictionary org-projectile org-category-capture org-present org-plus-contrib org-pomodoro alert log4e gntp org-download mwim multi-term mmm-mode markdown-toc markdown-mode live-py-mode less-css-mode launchctl hy-mode dash-functional htmlize haml-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter git-commit gh-md fuzzy flycheck-pos-tip pos-tip flycheck ghub with-editor eshell-z eshell-prompt-extras esh-help emmet-mode disaster diff-hl cython-mode company-web web-completion-data company-statistics company-emacs-eclim eclim company-c-headers company-auctex company-anaconda company color-theme-solarized color-theme cmake-mode clang-format auto-yasnippet yasnippet auctex-latexmk anaconda-mode pythonic f dash s ac-ispell auto-complete which-key wgrep use-package smex pcre2el macrostep ivy-hydra hydra help-fns+ helm-make projectile helm helm-core popup pkg-info epl flx exec-path-from-shell evil-visualstar evil-escape evil goto-chg undo-tree elisp-slime-nav diminish counsel-projectile counsel swiper ivy bind-map bind-key auto-compile packed async ace-window avy)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
