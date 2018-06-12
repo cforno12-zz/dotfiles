@@ -138,7 +138,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+                               :size 16
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -371,6 +371,9 @@ you should place your code here."
   (add-to-list 'default-frame-alist '(ns-appearance . dark)) ;; assuming you are using a dark theme
   (setq ns-use-proxy-icon nil)
   (setq frame-title-format nil)
+
+  ;;delete highlighted region
+  (delete-selection-mode 1)
 
   )
 
