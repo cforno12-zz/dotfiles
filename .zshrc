@@ -38,7 +38,7 @@ ENABLE_CORRECTION="true"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -52,9 +52,10 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions rails ruby)
 
 source $ZSH/oh-my-zsh.sh
+source $(dirname $(gem which colorls))/tab_complete.sh
 
 # User configuration
 
@@ -112,17 +113,57 @@ function extract() {
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
-alias ls='ls -FGlAhp'                       # Preferred 'ls' implementation
-alias less='less -FSRXc'                    # Preferred 'less' implementation
+alias ls='colorls -lA --sd'                 # Preferred 'ls' implementation
 cd() { builtin cd "$@"; ls; }               # Always list directory contents upon 'cd'
 alias cd..='cd ../'                         # Go back 1 directory level (for fast typers)
 alias ..='cd ../'                           # Go back 1 directory level
 alias f='open -a Finder ./'                 # f:            Opens current directory in MacOS Finder
 alias ~="cd ~"                              # ~:            Go Home
 alias c='clear'                             # c:            Clear terminal display
-alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
 mcd () { mkdir -p "$1" && cd "$1"; }        # mcd:          Makes new Dir and jumps inside
 cat () {ccat "$1"}
 
 # More Git tips http://firstaidgit.io/
 alias gss="git status -s"
+
+google() {
+    search=""
+    echo "Googling: $@"
+    for term in $@; do
+        search="$search%20$term"
+    done
+    open "http://www.google.com/search?q=$search"
+}
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
+
+SPACESHIP_PROMPT_ORDER=(
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  jobs          # Background jobs indicator
+  char          # Prompt character
+)
+SPACESHIP_RPROMPT_ORDER=(
+    time
+    battery
+)
+#colors
+SPACESHIP_CHAR_COLOR_SUCCESS=145 #greyish
+SPACESHIP_CHAR_COLOR_FAILURE=145 #greyish
+SPACESHIP_CHAR_COLOR_SECONDARY=145 #greyish
+SPACESHIP_TIME_COLOR=145 #greyish
+SPACESHIP_DIR_COLOR=67 #blue
+SPACESHIP_GIT_BRANCH_COLOR=133 #purpleish
+SPACESHIP_GIT_STATUS_COLOR=133 #purpleish
+#other configs
+SPACESHIP_CHAR_SYMBOL="$ "
+SPACESHIP_TIME_SHOW=true
+SPACESHIP_TIME_FORMAT="%W %*"
+SPACESHIP_BATTERY_SHOW=true
+SPACESHIP_BATTERY_SYMBOL_CHARGING="⚡️"
+SPACESHIP_BATTERY_SYMBOL_DISCHARGING=""
+SPACESHIP_BATTERY_THRESHOLD=99
