@@ -25,7 +25,7 @@
   "block-cursor":
     global:
       blinkOff:
-        backgroundColor: "#002b37"
+        backgroundColor: "rgba(0, 0, 0, 0)"
         borderColor: "#ff0000"
         borderStyle: "bordered-box"
       blinkOn:
@@ -43,13 +43,13 @@
     telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
-      "atom-dark-syntax"
+      "atom-material-syntax-light"
     ]
     titleBar: "custom-inset"
     warnOnLargeFileLimit: 10
   editor:
     backUpBeforeSaving: true
-    fontSize: 13
+    fontSize: 29
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4

@@ -36,6 +36,7 @@ values."
      ;; Uncomment some layer names and press
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     latex
      html
      python
      ruby

@@ -2,40 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117224-11708-1q37vm6/package.tgz",
+        "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118730-3492-y8b3sr.ks5mefusor/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117224-11708-1q37vm6/package.tgz",
-        "spec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117224-11708-1q37vm6/package.tgz",
+        "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118730-3492-y8b3sr.ks5mefusor/package.tgz",
+        "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118730-3492-y8b3sr.ks5mefusor/package.tgz",
         "type": "local"
       },
-      "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/apm-install-dir-117224-11708-w9orma"
+      "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-118730-3492-jjk3an.hpczncdi"
     ]
   ],
-  "_from": "../d-117224-11708-1q37vm6/package.tgz",
-  "_id": "highlight-selected@0.13.1",
+  "_from": "../d-118730-3492-y8b3sr.ks5mefusor/package.tgz",
+  "_id": "highlight-selected@0.14.0",
   "_inCache": true,
-  "_installable": true,
   "_location": "/highlight-selected",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117224-11708-1q37vm6/package.tgz",
+    "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118730-3492-y8b3sr.ks5mefusor/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117224-11708-1q37vm6/package.tgz",
-    "spec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117224-11708-1q37vm6/package.tgz",
+    "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118730-3492-y8b3sr.ks5mefusor/package.tgz",
+    "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118730-3492-y8b3sr.ks5mefusor/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117224-11708-1q37vm6/package.tgz",
-  "_shasum": "8b6ce153f680dfd60ab003835e666266c4420e5f",
+  "_resolved": "file:../d-118730-3492-y8b3sr.ks5mefusor/package.tgz",
+  "_shasum": "3c8c2c838b70beec0a4b108a5f7356bd70bb8b24",
   "_shrinkwrap": null,
-  "_spec": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/d-117224-11708-1q37vm6/package.tgz",
-  "_where": "/private/var/folders/d4/pkk546b50l5484lg4pl3qt_80000gn/T/apm-install-dir-117224-11708-w9orma",
+  "_spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-118730-3492-y8b3sr.ks5mefusor/package.tgz",
+  "_where": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-118730-3492-jjk3an.hpczncdi",
   "bugs": {
     "url": "https://github.com/richrace/highlight-selected/issues"
   },
@@ -44,16 +43,22 @@
       "versions": {
         "^1.0.0": "consumeStatusBar"
       }
+    },
+    "scroll-marker": {
+      "versions": {
+        "0.1.0": "consumeScrollMarker"
+      }
     }
   },
   "dependencies": {
+    "atom-package-deps": "^4.6.2",
     "grim": "^2.0.1"
   },
   "description": "Highlights the current word selected when double clicking",
   "devDependencies": {
-    "coffee-script": "1.9.0",
-    "coffeelint": "1.8.1",
-    "coffeelint-jasmine": "0.0.2"
+    "coffeelint": "^2.1.0",
+    "coffeelint-jasmine": "0.0.2",
+    "coffeescript": "^2.3.1"
   },
   "dist": {
     "shasum": "7c9da46b1412aceb069f8ca2ca54d014986ad408"
@@ -62,10 +67,18 @@
     "atom": ">=1.13.0 <2.0.0"
   },
   "homepage": "https://github.com/richrace/highlight-selected",
+  "keywords": [
+    "highlight selected",
+    "highlight selection",
+    "highlight occurrences"
+  ],
   "license": "MIT",
   "main": "./lib/highlight-selected",
   "name": "highlight-selected",
   "optionalDependencies": {},
+  "package-deps": [
+    "scroll-marker"
+  ],
   "providedServices": {
     "highlightSelected": {
       "description": "Exposes Highlight Selected Events",
@@ -81,5 +94,5 @@
     "type": "git",
     "url": "git+https://github.com/richrace/highlight-selected.git"
   },
-  "version": "0.13.1"
+  "version": "0.14.0"
 }

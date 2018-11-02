@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export PATH=:/usr/local/opt/libxml2/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/Library/TeX/textbin:$PATH
+#export PATH=:/usr/local/opt/libxml2/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/Library/TeX/textbin:$PATH
 export ZSH="$HOME/dotfiles/oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -55,7 +55,6 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(git zsh-autosuggestions rails ruby)
 
 source $ZSH/oh-my-zsh.sh
-source $(dirname $(gem which colorls))/tab_complete.sh
 
 # User configuration
 
@@ -70,10 +69,11 @@ export VISUAL='emacs'
 
 #FORNO aliases
 alias docs="cd Documents"
-alias 350="cd Documents/CS350"
-alias sshBing="ssh cforno1@remote.cs.binghamton.edu"
+alias 457='cd Documents/cs457'
+alias sshBing="ssh -t cforno1@remote.cs.binghamton.edu 'zsh'"
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+alias emacs='emacs -nw'
 
 #More aliases
 function extract() {
@@ -113,7 +113,7 @@ function extract() {
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
-alias ls='colorls -lA --sd'                 # Preferred 'ls' implementation
+alias ls='ls -FGlAhp'                       # Preferred 'ls' implementation
 cd() { builtin cd "$@"; ls; }               # Always list directory contents upon 'cd'
 alias cd..='cd ../'                         # Go back 1 directory level (for fast typers)
 alias ..='cd ../'                           # Go back 1 directory level
@@ -134,36 +134,3 @@ google() {
     done
     open "http://www.google.com/search?q=$search"
 }
-
-# Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
-
-SPACESHIP_PROMPT_ORDER=(
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  jobs          # Background jobs indicator
-  char          # Prompt character
-)
-SPACESHIP_RPROMPT_ORDER=(
-    time
-    battery
-)
-#colors
-SPACESHIP_CHAR_COLOR_SUCCESS=145 #greyish
-SPACESHIP_CHAR_COLOR_FAILURE=145 #greyish
-SPACESHIP_CHAR_COLOR_SECONDARY=145 #greyish
-SPACESHIP_TIME_COLOR=145 #greyish
-SPACESHIP_DIR_COLOR=67 #blue
-SPACESHIP_GIT_BRANCH_COLOR=133 #purpleish
-SPACESHIP_GIT_STATUS_COLOR=133 #purpleish
-#other configs
-SPACESHIP_CHAR_SYMBOL="$ "
-SPACESHIP_TIME_SHOW=true
-SPACESHIP_TIME_FORMAT="%W %*"
-SPACESHIP_BATTERY_SHOW=true
-SPACESHIP_BATTERY_SYMBOL_CHARGING="⚡️"
-SPACESHIP_BATTERY_SYMBOL_DISCHARGING=""
-SPACESHIP_BATTERY_THRESHOLD=99
