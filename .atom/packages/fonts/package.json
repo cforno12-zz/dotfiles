@@ -1,43 +1,29 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-11861-19305-1kkzg9q.fvbibb7qfr/package.tgz",
-        "scope": null,
-        "escapedName": null,
-        "name": null,
-        "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-11861-19305-1kkzg9q.fvbibb7qfr/package.tgz",
-        "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-11861-19305-1kkzg9q.fvbibb7qfr/package.tgz",
-        "type": "local"
-      },
-      "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-11861-19305-kba6d4.wztio4j9k9"
-    ]
-  ],
-  "_from": "../d-11861-19305-1kkzg9q.fvbibb7qfr/package.tgz",
-  "_id": "fonts@3.1.0",
-  "_inCache": true,
+  "_from": "https://www.atom.io/api/packages/fonts/versions/3.2.0/tarball",
+  "_id": "fonts@3.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-JsmLXEGBHIM16WW1c3o22lPFOep6HLqKoeqSS3CR7cfihQN/ljfTO8PJLC4hRYtGRHk8Ba7HQhqqLqzPDrMFPA==",
   "_location": "/fonts",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-11861-19305-1kkzg9q.fvbibb7qfr/package.tgz",
-    "scope": null,
-    "escapedName": null,
-    "name": null,
-    "rawSpec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-11861-19305-1kkzg9q.fvbibb7qfr/package.tgz",
-    "spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-11861-19305-1kkzg9q.fvbibb7qfr/package.tgz",
-    "type": "local"
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/fonts/versions/3.2.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/fonts/versions/3.2.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/fonts/versions/3.2.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/fonts/versions/3.2.0/tarball"
   },
   "_requiredBy": [
-    "#USER"
+    "#USER",
+    "/"
   ],
-  "_resolved": "file:../d-11861-19305-1kkzg9q.fvbibb7qfr/package.tgz",
-  "_shasum": "e652c67599936bd1bbd59b55bc97767ece35eaa5",
-  "_shrinkwrap": null,
-  "_spec": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/d-11861-19305-1kkzg9q.fvbibb7qfr/package.tgz",
-  "_where": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-11861-19305-kba6d4.wztio4j9k9",
+  "_resolved": "https://www.atom.io/api/packages/fonts/versions/3.2.0/tarball",
+  "_shasum": "05babef60840fea43ebe327834c8d509a19d8a59",
+  "_spec": "https://www.atom.io/api/packages/fonts/versions/3.2.0/tarball",
+  "_where": "/private/var/folders/mp/l03mwm9j16vdkk27w1mmt5nr0000gn/T/apm-install-dir-1181029-5683-cdljxa.zy4bn",
   "bugs": {
     "url": "https://github.com/braver/fonts/issues"
   },
+  "bundleDependencies": false,
   "configSchema": {
     "preview": {
       "type": "string",
@@ -55,6 +41,7 @@
         "Average Mono",
         "BPmono",
         "Bitstream Vera Sans Mono",
+        "Borg Sans Mono",
         "CamingoCode",
         "Code New Roman",
         "Consolamono",
@@ -85,26 +72,26 @@
         "Hasklig",
         "Hasklig Light",
         "Hasklig Medium",
-        "Hermit Light",
         "Hermit",
+        "Hermit Light",
         "Inconsolata",
         "Inconsolata-g",
         "Iosevka",
-        "Iosevka Thin",
-        "Iosevka Light",
         "Iosevka Extra Light",
+        "Iosevka Light",
         "Iosevka Medium",
-        "Latin Modern Mono Light",
+        "Iosevka Thin",
         "Latin Modern Mono",
+        "Latin Modern Mono Light",
         "League",
         "Lekton",
         "Liberation Mono",
         "Luculent",
         "Luxi Mono",
+        "M+",
         "M+ Light",
         "M+ Medium",
         "M+ Thin",
-        "M+",
         "Meslo",
         "Monofur",
         "Monoid",
@@ -115,23 +102,23 @@
         "Office Code Pro",
         "Office Code Pro Light",
         "Office Code Pro Medium",
-        "Oxygen Mono",
         "Overpass Mono",
-        "Plex",
+        "Oxygen Mono",
         "PT Mono",
+        "Plex Mono",
         "Profont",
         "Proggy Clean",
         "Quinze",
         "Roboto Mono",
         "Roboto Mono Light",
-        "Roboto Mono Thin",
         "Roboto Mono Medium",
-        "Share Tech Mono",
+        "Roboto Mono Thin",
         "SK Modernist",
+        "Share Tech Mono",
+        "Source Code Pro",
         "Source Code Pro Extra Light",
         "Source Code Pro Light",
         "Source Code Pro Medium",
-        "Source Code Pro",
         "Space Mono",
         "Sudo",
         "TeX Gyre Cursor",
@@ -149,8 +136,11 @@
     }
   },
   "dependencies": {},
+  "deprecated": false,
   "description": "Lots of monospace fonts.",
-  "devDependencies": {},
+  "devDependencies": {
+    "js-yaml": "^3.12.0"
+  },
   "engines": {
     "atom": ">=1.13.0 <2.0.0"
   },
@@ -165,12 +155,12 @@
   "license": "MIT",
   "main": "./lib/fonts",
   "name": "fonts",
-  "optionalDependencies": {},
-  "readme": "# Fonts package for Atom\n\nOh we do love our monospace fonts don't we? To celebrate typography and free choice, I've packaged all the great fonts I could get my hands on (over 45 of them at this point).\n\nThis package delivers them straight to Atom through the power of @font-face. You no longer need to hunt down and install your favourite font, instead you can now instantly try out any of the fonts in this package.\n\n# How to use\n\n1. Install the package\n2. Go to the package's settings page\n3. Select a font from the drop-down list\n\n<img src=\"https://raw.githubusercontent.com/braver/fonts/master/howto.jpg\" height=\"150\" width=\"780\">\n\nDisable the package to re-enable the normal font settings.\n\n# How to change the UI font\n\nAdd this rule (with your favorite font-family) to your style.less file\n\n```\natom-workspace {\n    font-family: Mononoki;\n}\n```\n\n## All fonts\n3270, Anka/Coder, Anonymous Pro, Aurulent Sans Mono, Average Mono, BPmono, Bitstream Vera Sans Mono, Code New Roman, Consolamono, Cousine, Cutive Mono, DejaVu Mono, Droid Sans Mono, Effects Eighty, Fantasque Sans Mono, Fifteen, Fira Mono, FiraCode, Fixedsys, Fixedsys with ligatures, GNU Freefont, GNU Unifont, Generic Mono, Hack, Hasklig, Hermit Light, Hermit, Inconsolata, Inconsolata-g, Latin Modern Mono Light, Latin Modern Mono, Lekton, Liberation Mono, Luxi Mono, M+ Light, M+ Medium, M+ Thin, M+, Meslo, Monofur, Monoid, Mononoki, NotCourierSans, Nova Mono, Office Code Pro, Oxygen Mono, PT Mono, Profont, Proggy Clean, Quinze, Roboto, Share Tech Mono, Source Code Pro Extra Light, Source Code Pro Light, Source Code Pro Medium, Source Code Pro, Sudo, TeX Gyre Cursor, Terminus, Ubuntu Mono, VT323, Verily Serif Mono, saxMono\n\n... and a couple more I forgot to list, there are too many! \n\n\n## More programming fonts\n\n* [These fonts (and more) and download links](http://programmingfonts.org/list)\n* Test drive these fonts in your browser using the [Programming Fonts Test Drive App](http://app.programmingfonts.org)\n",
-  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/braver/fonts.git"
   },
-  "version": "3.1.0"
+  "scripts": {
+    "build": "node scripts/gen.js"
+  },
+  "version": "3.2.0"
 }

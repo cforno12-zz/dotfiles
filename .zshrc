@@ -70,7 +70,13 @@ export VISUAL='emacs'
 #FORNO aliases
 alias docs="cd Documents"
 alias 457='cd Documents/cs457'
-alias sshBing="ssh -t cforno1@remote.cs.binghamton.edu 'zsh'"
+function sshBing(){
+    if [ $# -eq 0 ] ; then
+	ssh -t cforno1@remote.cs.binghamton.edu 'zsh';
+    else
+	ssh -t cforno1@remote0"$1".cs.binghamton.edu 'zsh';
+    fi
+}
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
 alias emacs='emacs -nw'
@@ -136,10 +142,12 @@ google() {
 }
 
 
+
+
 # POWERLINE CONFIG
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(host dir vcs rbenv)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time battery)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(anaconda time battery)
 POWERLEVEL9K_BATTERY_LEVEL_BACKGROUND=(darkred orange4 yellow4 yellow4 chartreuse3 green3 green4 darkgreen)
 POWERLEVEL9K_BATTERY_ICON=''
 POWERLEVEL9K_BATTERY_VERBOSE=false
@@ -155,3 +163,5 @@ POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='yellow'
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='black'
 POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='202'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='black'
+POWERLEVEL9K_ANACONDA_LEFT_DELIMITER=""
+POWERLEVEL9K_ANACONDA_RIGHT_DELIMITER=""

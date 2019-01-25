@@ -1,4 +1,11 @@
-@import 'functions';
+.font(@font, @weight, @style, @path) {
+  @font-face {
+    font-family: @font;
+    font-weight: @weight;
+    font-style: @style;
+    src: url('atom://fonts/resources/@{path}');
+  }
+}
 
 .font ( '3270', normal, normal, '3270/3270.woff' );
 .font ( 'Anka/Coder', bold, italic, 'anka-coder/anka-coder-bold-italic.ttf' );
@@ -10,8 +17,8 @@
 .font ( 'Anonymous Pro', normal, italic, 'anonymous-pro/anonymous-pro-italic.ttf' );
 .font ( 'Anonymous Pro', normal, normal, 'anonymous-pro/anonymous-pro.ttf' );
 .font ( 'Aurulent Sans Mono', normal, normal, 'aurulent/aurulent.otf' );
+.font ( 'Average Mono', bold, italic, 'average/average-bold-italic.otf' );
 .font ( 'Average Mono', bold, normal, 'average/average-bold.otf' );
-.font ( 'Average Mono', normal, italic, 'average/average-bold-italic.otf' );
 .font ( 'Average Mono', normal, italic, 'average/average-italic.otf' );
 .font ( 'Average Mono', normal, normal, 'average/average.otf' );
 .font ( 'BPmono', bold, normal, 'bpmono/bpmono-bold.woff' );
@@ -21,6 +28,7 @@
 .font ( 'Bitstream Vera Sans Mono', bold, normal, 'bitstream-vera/bitstream-vera-bold.woff' );
 .font ( 'Bitstream Vera Sans Mono', normal, italic, 'bitstream-vera/bitstream-vera-italic.woff' );
 .font ( 'Bitstream Vera Sans Mono', normal, normal, 'bitstream-vera/bitstream-vera.woff' );
+.font ( 'Borg Sans Mono', normal, normal, 'borg-sans-mono/borg-sans-mono.ttf' );
 .font ( 'CamingoCode', bold, italic, 'camingocode/camingocode-bold-italic.woff' );
 .font ( 'CamingoCode', bold, normal, 'camingocode/camingocode-bold.woff' );
 .font ( 'CamingoCode', normal, italic, 'camingocode/camingocode-italic.woff' );
@@ -181,10 +189,10 @@
 .font ( 'Overpass Mono', normal, normal, 'overpass/overpass.woff' );
 .font ( 'Overpass Mono', bold, normal, 'overpass/overpass-bold.woff' );
 .font ( 'Oxygen Mono', normal, normal, 'oxygen/oxygen.otf' );
-.font ( 'Plex', bold, italic, 'plex/plex-bold-italic.woff' );
-.font ( 'Plex', bold, normal, 'plex/plex-bold.woff' );
-.font ( 'Plex', normal, italic, 'plex/plex-italic.woff' );
-.font ( 'Plex', normal, normal, 'plex/plex.woff' );
+.font ( 'Plex Mono', bold, italic, 'plex-mono/plex-mono-semibold-italic.woff' );
+.font ( 'Plex Mono', bold, normal, 'plex-mono/plex-mono-semibold.woff' );
+.font ( 'Plex Mono', normal, italic, 'plex-mono/plex-mono-italic.woff' );
+.font ( 'Plex Mono', normal, normal, 'plex-mono/plex-mono.woff' );
 .font ( 'PT Mono', normal, normal, 'pt/pt.ttf' );
 .font ( 'Profont', normal, normal, 'profont/profont.ttf' );
 .font ( 'Proggy Clean', normal, normal, 'proggy-clean/proggy-clean.ttf' );
