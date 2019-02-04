@@ -78,7 +78,7 @@ function sshBing(){
     fi
 }
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
-alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias emacs='emacs -nw'
 
 #More aliases
