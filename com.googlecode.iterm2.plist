@@ -934,11 +934,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1105 350 606 469 0 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>538 619 1018 447 0 0 1920 1177 </string>
+	<string>538 653 918 452 0 0 1920 1177 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>20 15 1880 1148 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1600 1177 0 0 1920 1177 </string>
+	<string>960 23 960 1154 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 960 1177 0 0 1920 1177 </string>
 	<key>NeverWarnAboutShortLivedSessions_F15F94F7-952F-484B-9825-E85D58A17E18</key>
@@ -1182,7 +1182,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>160</integer>
+			<integer>200</integer>
 			<key>Command</key>
 			<string>/usr/local/bin/zsh</string>
 			<key>Cursor Boost</key>
@@ -1849,7 +1849,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-01-25T19:50:57Z</date>
+	<date>2019-02-01T15:08:15Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUSkippedVersion</key>

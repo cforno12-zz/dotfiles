@@ -147,7 +147,7 @@ google() {
 # POWERLINE CONFIG
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(host dir vcs rbenv)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(anaconda time battery)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(anaconda history time battery)
 POWERLEVEL9K_BATTERY_LEVEL_BACKGROUND=(darkred orange4 yellow4 yellow4 chartreuse3 green3 green4 darkgreen)
 POWERLEVEL9K_BATTERY_ICON=''
 POWERLEVEL9K_BATTERY_VERBOSE=false
