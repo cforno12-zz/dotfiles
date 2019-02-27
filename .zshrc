@@ -64,12 +64,12 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-export EDITOR='emacs'
-export VISUAL='emacs'
+export EDITOR='emacs -nw'
+export VISUAL='emacs -nw'
 
 #FORNO aliases
 alias docs="cd Documents"
-alias 457='cd Documents/cs457'
+
 function sshBing(){
     if [ $# -eq 0 ] ; then
 	ssh -t cforno1@remote.cs.binghamton.edu 'zsh';
@@ -80,7 +80,6 @@ function sshBing(){
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias emacs='emacs -nw'
-
 #More aliases
 function extract() {
   if [ -f "$1" ] ; then
@@ -165,3 +164,4 @@ POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='202'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='black'
 POWERLEVEL9K_ANACONDA_LEFT_DELIMITER=""
 POWERLEVEL9K_ANACONDA_RIGHT_DELIMITER=""
+export PATH="/usr/local/opt/ruby/bin:$PATH"
