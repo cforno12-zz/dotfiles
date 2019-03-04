@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 #export PATH=:/usr/local/opt/libxml2/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/Library/TeX/textbin:$PATH
@@ -164,4 +165,6 @@ POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='202'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='black'
 POWERLEVEL9K_ANACONDA_LEFT_DELIMITER=""
 POWERLEVEL9K_ANACONDA_RIGHT_DELIMITER=""
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+history -cw >/dev/null 2>/dev/null
+
