@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/node@10/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 #export PATH=:/usr/local/opt/libxml2/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/Library/TeX/textbin:$PATH
@@ -80,7 +81,7 @@ function sshBing(){
 }
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
-alias emacs='emacs -nw'
+#alias emacs='emacs -nw'
 #More aliases
 function extract() {
   if [ -f "$1" ] ; then
@@ -167,4 +168,6 @@ POWERLEVEL9K_ANACONDA_LEFT_DELIMITER=""
 POWERLEVEL9K_ANACONDA_RIGHT_DELIMITER=""
 
 history -cw >/dev/null 2>/dev/null
+
+
 
