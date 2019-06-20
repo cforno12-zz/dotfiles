@@ -1,0 +1,128 @@
+cd ..
+cd cs447/
+ls
+cd assignment-2-cforno12/
+git stash
+git stash
+git status
+git rm part1.cpp 
+rm part1.cpp 
+git status
+exit
+cd ..
+git clone git@github.com:bu-cs547-20191s/assignment-2-cforno12.git
+ls
+cd home
+ls
+cd cforno1/
+l
+ls
+rm sketchbook/
+rm source-code-pro-2.030R-ro-1.050R-it/
+ls
+rm 1.050R-it.zip 
+rm -rf source-code-pro-2.030R-ro-1.050R-it/
+cd ..
+cd lribeir1/
+cd cforno1/
+cd Documents/
+ls
+cd cs447/
+ls
+cd assignment-2-cforno12/
+ls
+touch part_one.cpp
+touch Makefile
+ls
+emacs Makefile 
+make
+make
+./part_one 
+ls
+make
+make test
+exit
+make
+make test
+make
+make
+make test
+make test
+make
+make test
+make
+make test
+make
+make test
+make
+make test
+make
+make test
+make
+make test
+make 
+make test
+make
+make test
+make 
+make test
+make
+make est
+make test
+make
+make test
+make
+make test
+make 
+make test
+make
+make test
+make
+make test
+make
+make test
+make
+make test
+make
+make test
+amke
+make
+make test
+git add -A
+git commit -m "finished sequential histograms"
+git push
+exit
+git add -A
+git commit -m "finished parallelized with OpenMP"
+git push
+git add -A
+git commit -m "added timing for sequential and threaded histograms"
+git push
+touch part_two.cpp
+git add -A
+git commit -m "finished part2"
+git push
+make test02
+make test2
+make test2
+make test2
+make test2
+git stash
+git stash drop
+exit
+brew install slurm
+ls
+mkdir hw10
+ls
+ls
+mkdir hw10
+ls
+cd hw10
+ls
+cd di
+cd dotfiles/
+git add -A
+git commit -m "sync"
+git push
+ls
+exit

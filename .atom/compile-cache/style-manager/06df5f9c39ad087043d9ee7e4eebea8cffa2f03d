@@ -1,1 +1,0 @@
-{"source":"atom-text-editor.editor .cursors .cursor {\n  opacity: 1;\n  color: transparent;\n  background-color: transparent;\n  border: none;\n  transition-property: background-color, border-color, opacity;\n}\natom-text-editor[mini]:not(.is-focused).editor .cursors .cursor {\n  display: none;\n}\n"}

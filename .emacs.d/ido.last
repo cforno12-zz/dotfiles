@@ -1,0 +1,133 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/cris.fornoibm.com/" . "dotfiles/")
+ ("/Users/" . "CrisForno/")
+ ("/" . "Users/")
+ ("/Users/CrisForno/Documents/cs471/hw/" . "hw9/")
+ ("/Users/CrisForno/Documents/cs471/" . "hw/")
+ ("/ssh:cforno1@remote.cs.binghamton.edu:/" . "home/")
+ ("/ssh:cforno1@remote.cs.binghamton.edu:/home/cforno1/Documents/cs447/parallel_k-nn-cforno12/" . "src/")
+ ("/ssh:cforno1@remote.cs.binghamton.edu:/home/cforno1/Documents/cs447/" . "parallel_k-nn-cforno12/")
+ ("/ssh:cforno1@remote.cs.binghamton.edu:/home/cforno1/Documents/" . "cs447/")
+ ("/ssh:cforno1@remote.cs.binghamton.edu:/home/cforno1/" . "Documents/")
+ ("/ssh:cforno1@remote.cs.binghamton.edu:/home/" . "cforno1/")
+ ("/ssh:cforno1@remote.cs.binghamton.edu:/home/cforno1/Documents/cs447/parallel_k-nn-cforno12/src/" . "include/")
+ ("/ssh:cforno1@remote.cs.binghamton.edu:Documents/cs447/parallel_k-nn-cforno12/" . "src/")
+ ("/ssh:cforno1@remote.cs.binghamton.edu:Documents/cs447/" . "parallel_k-nn-cforno12/")
+ ("/ssh:cforno1@remote.cs.binghamton.edu:Documents/" . "cs447/")
+ ("/ssh:cforno1@remote.cs.binghamton.edu:" . "Documents/")
+ ("/Users/CrisForno/Documents/cs447/" . "assignment-2-cforno12/")
+ ("/Users/CrisForno/Documents/cs447/parallel_k-nn-cforno12/src/" . "include/")
+ ("/Users/CrisForno/Documents/cs447/parallel_k-nn-cforno12/bst_test/" . "bst_test/")
+ ("/Users/CrisForno/.emacs.d/" . "auto-save-list/")
+ ("/Users/CrisForno/Documents/cs447/parallel_k-nn-cforno12/" . "src/")
+ ("/Users/CrisForno/Documents/" . "cs471/")
+ ("/Users/CrisForno/" . "Documents/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/cris.fornoibm.com/dotfiles/.emacs.d/"
+ "/Users/CrisForno/Documents/cs471/hw/hw10/"
+ "/ssh:cforno1@remote.cs.binghamton.edu:/home/cforno1/Documents/cs447/assignment-2-cforno12/"
+ "/Users/CrisForno/Downloads/"
+ "/Users/CrisForno/Documents/cs447/parallel_k-nn-cforno12/"
+ "/ssh:cforno1@remote.cs.binghamton.edu:/home/cforno1/Documents/cs447/parallel_k-nn-cforno12/src/include/"
+ "/ssh:cforno1@remote.cs.binghamton.edu:/home/cforno1/Documents/cs447/parallel_k-nn-cforno12/src/"
+ "/ssh:cforno1@remote.cs.binghamton.edu:/home/cforno1/Documents/cs447/parallel_k-nn-cforno12/"
+ "/Users/CrisForno/Documents/cs447/assignment-2-cforno12/"
+ "/Users/CrisForno/.emacs.d/"
+ "/Users/CrisForno/Documents/cs471/hw/hw9/"
+ "/Users/CrisForno/Documents/cs471/hw/hw8/"
+ "/Users/CrisForno/Documents/cs441/lichobile/"
+ "/ssh:cforno1@remote.cs.binghamton.edu:/home/cforno1/Documents/cs447/parallel_k-nn-cforno12/scripts/"
+ "/ssh:cforno1@remote.cs.binghamton.edu:Documents/cs447/parallel_k-nn-cforno12/src/"
+ "/Users/CrisForno/Documents/cs447/parallel_k-nn-cforno12/src/include/"
+ "/Users/CrisForno/Documents/cs447/parallel_k-nn-cforno12/src/"
+ "/Users/CrisForno/Documents/cs471/hw/hw7/"
+ "/Users/CrisForno/Documents/cs447/parallel_k-nn-cforno12/bst_test/bst_test/"
+ "/Users/CrisForno/Documents/cs447/parallel_k-nn-cforno12/scripts/"
+ "/Users/CrisForno/Documents/2018s/"
+ "/Users/CrisForno/Documents/cs471/hw/hw6/"
+ "/Users/CrisForno/Documents/cs471/hw/hw5/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "hw10.txt"
+ "part_two.cpp"
+ "Makefile"
+ "part_two"
+ "matrix-vector.cpp"
+ "length.cpp"
+ "part_one.cpp"
+ "Point.hpp"
+ "threaded.cpp"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/cris.fornoibm.com/dotfiles/.emacs.d/" (23817 6737 347182 185000) "elpa/" "recentf" "README.md" "init.el" "auto-save-list/" "tramp" "package.el" "eshell/" "ido.last" "../" "./")
+
+ ("/Users/cris.fornoibm.com/dotfiles/" (23817 5227 811685 968000) ".gitconfig" ".spacemacs" ".git/" "oh-my-zsh/" ".gitattributes" ".gitignore" "com.googlecode.iterm2.plist" "README.md" ".emacs.d/" "cristobal.forno.itermcolors" ".zshrc" ".DS_Store" "../" "./")
+
+ ("/Users/cris.fornoibm.com/" (23817 6505 36124 259000) ".viminfo" ".bash_history" "Downloads/" ".oh-my-zsh/" ".bash_profile" ".hushlogin" "Documents/" ".Trash/" "Movies/" ".ssh/" ".%87A45C6C.png" ".cisco/" "Public/" ".zcompdump-Cris’s MacBook Pro-5.7.1" ".emacs.d/" ".oracle_jre_usage/" "Library/" "Desktop/" ".zsh_history" "Pictures/" ".zcompdump-Cris’s MacBook Pro-5.3" ".zshrc" ".subversion/" ".rbenv/" ".wget-hsts" ".CFUserTextEncoding" "dotfiles/" ".DS_Store" "Music/" "../" "./")
+
+ ("/Users/CrisForno/Documents/cs471/hw/hw10/" (23726 36339 772180 209000) "hw10.txt" ".#hw10.txt" "../" "./")
+
+ ("/Users/CrisForno/" (23726 502 863847 841000) ".conda/" "anaconda2/" ".zlogin" ".viminfo" ".gitconfig" ".cache/" ".continuum/" ".python_history" "Downloads/" "anaconda3/" ".oh-my-zsh/" ".gem/" ".bash_profile" ".spacemacs" ".mysql_history" ".zcompdump-Ava-5.6.2" ".pyenv/" "Documents/" ".graphlab/" ".npm/" ".v8flags.7.0.276.38-node.18.651738745962c1647a188bed6079abfe.json" ".zcompdump" ".jupyter/" ".tldrc/" ".zoomus/" ".Trash/" ".gradle/" ".profile" "Applications/" ".vimrc" "Movies/" ".ssh/" ".anaconda/" ".zcompdump-Ava-5.3" "macports/" ".kube/" "package-lock.json" ".gitignore" ".bash_profile-anaconda3.bak" "Public/" ".bash_profile-anaconda2.bak" ".surprise_data/" ".cups/" ".android/" ".node_repl_history" ".sshrc" ".emacs.d/" ".zcompdump-Ava-5.7.1" "iCloud Drive (Archive)/" ".emulator_console_auth_token" ".oracle_jre_usage/" ".mkshrc" ".electron/" ".matplotlib/" "Library/" "Desktop/" ".ipython/" ".hasura/" ".zsh_history" ".bundle/" "node_modules/" ".mitmproxy/" ".atom/" "Pictures/" ".local/" ".zcompdump-Ava-5.6.1" ".zshrc" "bower_components/" ".zshrc.pre-oh-my-zsh" ".netrc" ".rbenv/" ".z" "bin/" ".CFUserTextEncoding" "dotfiles/" ".DS_Store" "go/" ".node-gyp/" ".condarc" ".v8flags.6.8.275.32-node.12.651738745962c1647a188bed6079abfe.json" ".zcompdump-Ava-5.5.1" "Music/" ".config/" "../" "./")
+
+ ("/Users/CrisForno/.emacs.d/" (23720 3027 525037 438000) ".git/" "elpa/" "recentf" "README.md" "init.el" "auto-save-list/" "tramp" "package.el" "eshell/" "ido.last" "../" "./")
+
+ ("/Users/CrisForno/Downloads/" (23722 26771 103902 426000) "golang_logo-master.zip" "GO.txt" "Power Season 5 Complete 720p WEB H264 [i_c]/" "form.pdf" "Offer+Letter+(US)+2019-03-28+13_03+PDT.pdf" "Chess/" "chesslibrary/" "golang_logo-master/" "Michael L. Scott - Programming Language Pragmatics-Morgan Kaufmann (2015).pdf" "Boku No Hero Academia/" "cs471-master/" "chess_pieces/" "matrix-vector.cpp" "jpg2pdf.pdf" "combinepdf.pdf" "Free Solo 2018 1080p WEB-DL X264 AC3-SeeHD/" "lyft2.pdf" "Doc - Apr 1 2019 - 15-41 - p1.jpg" "lyft3.pdf" "lyft1.pdf" "Doc - Apr 1 2019 - 15-41 - p2.jpg" "Candidate Travel Reimbursement Form_Campus.pdf" ".DS_Store" "Learning GNU Emacs, 3rd Edition.epub" "lyft4.pdf" "verify-results" "Copy-of-Go_project.pdf" "length.cpp" "lyft5.pdf" "Boku no Hero Academia S2 - 00~25 [720p][Multiple Subtitle]/" "../" "./")
+
+ ("/Users/" (23707 43157 114658 308000) "Guest/" "Shared/" "CrisForno/" ".localized" "../" "./")
+
+ ("/Users/CrisForno/Documents/cs447/parallel_k-nn-cforno12/scripts/" (23688 32076 667728 69000) "query_12152426.dat" "dump_kec.cpp" "data_12152517.dat" "query_12152437.dat" "a.out" "data_5172112.dat" "query_file" "query_5172217.dat" "verify-results" "results.dat" "training_data" "../" "./")
+
+ ("/Users/CrisForno/Documents/cs471/hw/hw7/" (23689 49458 72208 486000) "hw7.txt" "../" "./")
+
+ ("/Users/CrisForno/Documents/cs447/parallel_k-nn-cforno12/src/" (23690 56431 255457 278000) "sequential.cpp" "Node.cpp" "include/" "threaded.cpp" "../" "./")
+
+ ("/Users/CrisForno/Documents/cs447/parallel_k-nn-cforno12/src/include/" (23688 31853 147143 898000) "KNN_seq.hpp" "Node.hpp" "Point.hpp" "KNN.hpp" "../" "./")
+
+ ("/Users/CrisForno/Documents/cs447/parallel_k-nn-cforno12/" (23688 32088 538793 683000) "src/" ".git/" "scripts/" "bst_test/" "README.md" "k-nn" "Makefile" "results.dat" "../" "./")
+
+ ("/Users/CrisForno/Documents/cs441/lichobile/" (23701 30463 41756 959000) "src/" "cordova.polyfills.js" "build.json.example" ".travis.yml" "npm-debug.log" ".git/" "stockfish.js" "tsconfig.json" "gulpfile.js" ".github/" "scripts/" "COPYING.md" "CONTRIBUTING.md" "tslint.json" "package.json" "package-lock.json" ".gitignore" "README.md" "www/" "config.xml" ".npmrc" "env.json" "testPreprocessor.js" "node_modules/" "env-stage.json" "LICENSE" "res/" "env.json.example" ".babelrc" "deepLinkTest.html" "../" "./")
+
+ ("/Users/CrisForno/Documents/cs471/hw/hw8/" (23706 53883 412293 477000) "hw8.txt" "../" "./")
+
+ ("/Users/CrisForno/Documents/cs471/hw/hw9/" (23715 57240 778096 434000) "cforno1_hw9.txt" "../" "./")
+
+ ("/Users/CrisForno/Documents/cs447/assignment-2-cforno12/" (23717 21088 85305 228000) ".git/" "README.md" "../" "./")
+
+ ("/Users/CrisForno/Documents/cs447/" (23715 58855 197451 706000) "assignment-2-cforno12/" "parallel_k-nn-cforno12/" "../" "./")
+
+ ("/Users/CrisForno/Documents/cs471/hw/" (23714 28201 63182 279000) "cforno1_hw5.tar.gz" "cforno1_hw7.tar.gz" "cforno1_hw3.tar.gz" "hw7/" "cforno1_hw1.tar.gz" "hw9/" "hw8/" "hw1/" "hw6/" "cforno1_hw4.tar.gz" "cforno1_hw2.tar.gz" "hw3/" "hw4/" "hw5/" "hw2/" "../" "./")
+
+ ("/Users/CrisForno/Documents/" (23706 37114 218645 714000) "330_hw/" "spring_2018_textbooks/" "cpp_tests/" "job_applications_2018/" "cs447/" "cs471/" "CS240-Fall17/" "html_talk/" "2019s/" "cs441/" "personal_website.io/" "hackbu_python_project/" "cover_letters/" "cs436/" "terminal-wallpaper/" "bolierplate_hackbu2019s/" "CS350/" "snocats/" "resumes/" "IBM_onboarding/" "college_schedule/" "hack_bu/" "CA5_CS240/" "MATH327/" "geog221/" "ski_class/" ".localized" "personal_projects/" "cs457/" "fall_2017_txtbooks/" "Prog5Forno_cforno1/" ".DS_Store" "dump/" "2018s/" "CS320/" "PUT_ON_EXTERNAL/" "CS320_projects/" "cs373/" "club/" "CS375/" "../" "./")
+
+ ("/Users/CrisForno/Documents/cs471/" (23697 33236 573356 252000) "presentation/" "practice/" ".git/" "README.md" "hw/" "../" "./")
+
+ ("/Users/CrisForno/Documents/cs471/presentation/" (23697 33898 200004 683000) ".#brief_description.txt" "../" "./")
+
+ ("/Users/CrisForno/Documents/cs447/parallel_k-nn-cforno12/bst_test/bst_test/" (23684 2734 633432 163000) "set_commas.cpp" "make.cpp" "bst.cpp" ".#bst.cpp" "Makefile" "out" "../" "./")
+
+ ("/Users/CrisForno/.emacs.d/auto-save-list/" (23678 59916 596107 68000) ".saves-12158-Ava.local~" "../" "./")
+
+ ("/Users/CrisForno/Documents/cs447/parallel_k-nn-cforno12/bst_test/" (23677 55554 690269 498000) "bst_test/" "../" "./")
+
+ ("/Users/CrisForno/Documents/2018s/" (23436 41382 946785 611000) "assets/" ".git/" "static/" "img/" "README.md" "js/" "css/" "index.html" "../" "./")
+
+ ("/Users/CrisForno/Documents/cs471/hw/hw5/" (23677 53639 863012 846000) "hw5.pl" "../" "./")
+
+ ("/Users/CrisForno/Documents/cs471/hw/hw6/" (23677 42068 457081 896000) "hw6.txt" "../" "./")
+
+ ("/Users/CrisForno/dotfiles/" (23670 57362 287010 713000) ".gitconfig" ".spacemacs" ".git/" "oh-my-zsh/" ".gitattributes" ".gitignore" "com.googlecode.iterm2.plist" "README.md" "cristobal.forno.itermcolors" ".atom/" ".zshrc" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
