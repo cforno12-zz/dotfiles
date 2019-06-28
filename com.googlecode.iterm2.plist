@@ -361,7 +361,7 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles</string>
+	<string>~/Downloads</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -398,9 +398,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>981 256 742 508 0 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>926 437 796 486 0 0 1920 1177 </string>
+	<string>81 706 918 452 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1920 1177 0 0 1920 1177 </string>
+	<string>2760 310 840 1027 1920 310 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -668,7 +668,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>300</integer>
+			<integer>191</integer>
 			<key>Command</key>
 			<string></string>
 			<key>Cursor Color</key>
@@ -1061,9 +1061,9 @@
 			<key>Right Option Key Sends</key>
 			<integer>1</integer>
 			<key>Rows</key>
-			<integer>60</integer>
+			<integer>56</integer>
 			<key>Screen</key>
-			<integer>-1</integer>
+			<integer>-2</integer>
 			<key>Scrollback Lines</key>
 			<integer>1000</integer>
 			<key>Selected Text Color</key>
@@ -1098,6 +1098,8 @@
 			<string></string>
 			<key>Silence Bell</key>
 			<false/>
+			<key>Space</key>
+			<integer>0</integer>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tags</key>
@@ -1121,7 +1123,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>12</integer>
+			<integer>0</integer>
 			<key>Working Directory</key>
 			<string>/Users/cris.fornoibm.com</string>
 		</dict>
@@ -1134,6 +1136,8 @@
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>582561073.37149298</real>
 	<key>PointerActions</key>
@@ -1180,9 +1184,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-06-18T15:53:29Z</date>
+	<date>2019-06-27T14:38:46Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SuppressRestartAnnouncement</key>
+	<true/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>

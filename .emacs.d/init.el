@@ -33,13 +33,59 @@ There are two things you can do about this warning:
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (set-face-attribute 'default nil :height 175)
-
+(which-key-mode)
 ;;======================
+
+;;=====USEFUL_KEYBINDINGS======
+
+(defun save-all ()
+  "Saving all files w/o prompt"
+  (interactive)
+  (save-some-buffers t)
+  )
+
+(global-set-key (kbd "C-x s") 'save-all)
+
+(defun delete-window-balance ()
+  "Delete window and rebalance the remaining ones."
+  (interactive)
+  (delete-window)
+  (balance-windows))
+(defun split-window-below-focus ()
+  "Split window horizontally and move focus to other window."
+  (interactive)
+  (split-window-below)
+  (balance-windows)
+  (other-window 1))
+(defun split-window-right-focus ()
+  "Split window vertically and move focus to other window."
+  (interactive)
+  (split-window-right)
+  (balance-windows)
+  (other-window 1))
+
+(global-set-key (kbd "C-0") 'delete-window-balance)
+(global-set-key (kbd "C-1") 'delete-other-windows)
+(global-set-key (kbd "C-2") 'split-window-below-focus)
+(global-set-key (kbd "C-3") 'split-window-right-focus)
+
+;;========================
+
+;;=====SMEX=========
+
+(global-set-key (kbd "M-x") 'smex)
+
+;;=================
 
 ;;========REMOTE==========
 
 ;;=========================
 
+;;=====MAGIT=========
+
+(global-set-key (kbd "C-x g") 'magit-status)
+
+;;==================
 
 ;;======ESHELL==========
 
@@ -134,7 +180,7 @@ There are two things you can do about this warning:
     ("d057f0430ba54f813a5d60c1d18f28cf97d271fd35a36be478e20924ea9451bd" "a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" default)))
  '(package-selected-packages
    (quote
-    (restart-emacs eshell-git-prompt go-mode dashboard whitespace-cleanup-mode zenburn-theme material-theme solarized-theme thrift centered-cursor-mode))))
+    (which-key smex magit better-defaults restart-emacs eshell-git-prompt go-mode dashboard whitespace-cleanup-mode zenburn-theme material-theme solarized-theme thrift centered-cursor-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

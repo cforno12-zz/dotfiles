@@ -2,7 +2,7 @@
 
 ;; ----- ido-last-directory-list -----
 (
- ("/Users/cris.fornoibm.com/" . "dotfiles/")
+ ("/Users/cris.fornoibm.com/" . ".emacs.d/")
  ("/Users/" . "CrisForno/")
  ("/" . "Users/")
  ("/Users/CrisForno/Documents/cs471/hw/" . "hw9/")
@@ -29,6 +29,9 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/Users/cris.fornoibm.com/.emacs.d/"
+ "/Users/cris.fornoibm.com/dotfiles/"
+ "/Users/cris.fornoibm.com/Documents/weekly_meetings/"
  "/Users/cris.fornoibm.com/dotfiles/.emacs.d/"
  "/Users/CrisForno/Documents/cs471/hw/hw10/"
  "/ssh:cforno1@remote.cs.binghamton.edu:/home/cforno1/Documents/cs447/assignment-2-cforno12/"
@@ -57,6 +60,8 @@
 ;; ----- ido-work-file-list -----
 (
  "init.el"
+ "README.md"
+ "06_25_2019.txt"
  "hw10.txt"
  "part_two.cpp"
  "Makefile"
@@ -64,17 +69,19 @@
  "matrix-vector.cpp"
  "length.cpp"
  "part_one.cpp"
- "Point.hpp"
- "threaded.cpp"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/cris.fornoibm.com/dotfiles/.emacs.d/" (23817 6737 347182 185000) "elpa/" "recentf" "README.md" "init.el" "auto-save-list/" "tramp" "package.el" "eshell/" "ido.last" "../" "./")
+ ("/Users/cris.fornoibm.com/dotfiles/.emacs.d/" (23830 18626 439654 320000) "elpa/" "recentf" "README.md" "init.el" "auto-save-list/" "transient/" "tramp" "package.el" "eshell/" "ido.last" "../" "./")
 
- ("/Users/cris.fornoibm.com/dotfiles/" (23817 5227 811685 968000) ".gitconfig" ".spacemacs" ".git/" "oh-my-zsh/" ".gitattributes" ".gitignore" "com.googlecode.iterm2.plist" "README.md" ".emacs.d/" "cristobal.forno.itermcolors" ".zshrc" ".DS_Store" "../" "./")
+ ("/Users/cris.fornoibm.com/.emacs.d/" (23830 15370 5621 545000) "elpa/" "recentf" "README.md" "init.el" "auto-save-list/" "transient/" "tramp" "package.el" "eshell/" "ido.last" "../" "./")
 
- ("/Users/cris.fornoibm.com/" (23817 6505 36124 259000) ".viminfo" ".bash_history" "Downloads/" ".oh-my-zsh/" ".bash_profile" ".hushlogin" "Documents/" ".Trash/" "Movies/" ".ssh/" ".%87A45C6C.png" ".cisco/" "Public/" ".zcompdump-Cris’s MacBook Pro-5.7.1" ".emacs.d/" ".oracle_jre_usage/" "Library/" "Desktop/" ".zsh_history" "Pictures/" ".zcompdump-Cris’s MacBook Pro-5.3" ".zshrc" ".subversion/" ".rbenv/" ".wget-hsts" ".CFUserTextEncoding" "dotfiles/" ".DS_Store" "Music/" "../" "./")
+ ("/Users/cris.fornoibm.com/dotfiles/" (23830 14750 196258 166000) ".gitconfig" ".spacemacs" ".git/" "oh-my-zsh/" ".gitattributes" ".gitignore" "com.googlecode.iterm2.plist" "README.md" ".emacs.d/" "cristobal.forno.itermcolors" ".zshrc" "../" "./")
+
+ ("/Users/cris.fornoibm.com/" (23830 10549 43286 822000) ".viminfo" ".bash_history" ".Box_StreemToSync" "Downloads/" ".oh-my-zsh/" ".bash_profile" ".hushlogin" "Documents/" ".tldrc/" ".Trash/" ".Box_EngineServer" "Movies/" ".ssh/" ".%87A45C6C.png" ".cisco/" "Public/" ".zcompdump-Cris’s MacBook Pro-5.7.1" ".emacs.d/" ".oracle_jre_usage/" "Library/" "Desktop/" ".zsh_history" ".Box_SyncToStreem" "Pictures/" ".zcompdump-Cris’s MacBook Pro-5.3" ".zshrc" ".subversion/" ".rbenv/" ".wget-hsts" ".CFUserTextEncoding" "dotfiles/" ".Box_UIServer" "Box/" "Music/" "../" "./")
+
+ ("/Users/cris.fornoibm.com/Documents/weekly_meetings/" (23826 25145 885840 110000) "06_25_2019.txt" "../" "./")
 
  ("/Users/CrisForno/Documents/cs471/hw/hw10/" (23726 36339 772180 209000) "hw10.txt" ".#hw10.txt" "../" "./")
 

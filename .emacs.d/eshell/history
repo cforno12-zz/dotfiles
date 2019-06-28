@@ -1,10 +1,3 @@
-cd ..
-cd cs447/
-ls
-cd assignment-2-cforno12/
-git stash
-git stash
-git status
 git rm part1.cpp 
 rm part1.cpp 
 git status
@@ -126,3 +119,10 @@ git commit -m "sync"
 git push
 ls
 exit
+ls
+cd Documents/
+ls
+mkdir weekly_meetings
+ls
+cd weekly_meetings/
+touch 06_25_2019.txt
