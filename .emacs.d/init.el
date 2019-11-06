@@ -17,21 +17,22 @@ There are two things you can do about this warning:
     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 
-;;=====DASHBOARD=======================
-(require 'dashboard);; dashboard
-(dashboard-setup-startup-hook)
-;; Set the title
-(setq dashboard-banner-logo-title "Welcome to Emacs Dashboard")
-;; Set the banner
-(setq dashboard-startup-banner 3)
-(setq show-week-agenda-p t)
-;; Content is not centered by default. To center, set
-(setq dashboard-center-content t)
-;;====================================
 
 ;;=======STARTUP OPTIONS=========
 
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+;;(add-to-list 'default-frame-alist '(fullscreen . maximized))
+(defun set-frame-size-according-to-resolution ()
+  (interactive)
+  (if window-system
+  (progn
+    (if (> (x-display-pixel-width) 1280)
+           (add-to-list 'default-frame-alist (cons 'width 120))
+           (add-to-list 'default-frame-alist (cons 'width 80)))
+    (add-to-list 'default-frame-alist 
+         (cons 'height (/ (- (x-display-pixel-height) 200)
+			  (frame-char-height)))))))
+
+(set-frame-size-according-to-resolution)
 (set-face-attribute 'default nil :height 175)
 (which-key-mode)
 ;;======================
@@ -71,13 +72,45 @@ There are two things you can do about this warning:
 
 ;;========================
 
-;;=====SMEX=========
+;;===========IVY/SWIPER/COUNSEL===========
+(ivy-mode 1)
+(global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key (kbd "\C-s") 'swiper)
+;;=======================================
 
-(global-set-key (kbd "M-x") 'smex)
+;;=====DASHBOARD=======================
+(require 'dashboard);; dashboard
+(dashboard-setup-startup-hook)
+;; Set the title
+(setq dashboard-banner-logo-title "Welcome to Emacs")
+;; Set the banner
+(setq dashboard-startup-banner 3)
+(setq show-week-agenda-p t)
+;; Content is not centered by default. To center, set
+(setq dashboard-center-content t)
+;;====================================
 
-;;=================
+;;========================PROJECTILE===========================
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+;;=============================================================
+
+;;========================ALL THE ICONS=============================
+
+(require 'all-the-icons)
+
+;;=================================================================
 
 ;;========REMOTE==========
+
+(defun lp6 ()
+  (interactive)
+  (dired "/sshx:root@ltcalpine2-lp6.aus.stglabs.ibm.com:/"))
+
+(defun lp16 ()
+  (interactive)
+  (dired "/sshx:root@ltcalpine2-lp16.aus.stglabs.ibm.com:/"))
 
 ;;=========================
 
@@ -93,6 +126,16 @@ There are two things you can do about this warning:
 
 ;;======================
 
+;;==========WINDMOVE===========
+
+(global-set-key (kbd "C-x <up>") 'windmove-up)
+(global-set-key (kbd "C-x <down>") 'windmove-down)
+(global-set-key (kbd "C-x <left>") 'windmove-left)
+(global-set-key (kbd "C-x <right>") 'windmove-right)
+
+;;============================
+
+
 ;; reduce the frequency of garbage collection by making it happen on
 ;; each 50MB of allocated data (the default is on every 0.76MB)
 (setq gc-cons-threshold 50000000)
@@ -105,6 +148,10 @@ There are two things you can do about this warning:
 
 ;; the blinking cursor is nothing, but an annoyance
 (blink-cursor-mode -1)
+
+;; cursor color
+(set-cursor-color "#ff0000")
+
 
 ;; disable the annoying bell ring
 (setq ring-bell-function 'ignore)
@@ -178,9 +225,10 @@ There are two things you can do about this warning:
  '(custom-safe-themes
    (quote
     ("d057f0430ba54f813a5d60c1d18f28cf97d271fd35a36be478e20924ea9451bd" "a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" default)))
+ '(grep-command "grep --color -nHRI -e REGEX *")
  '(package-selected-packages
    (quote
-    (which-key smex magit better-defaults restart-emacs eshell-git-prompt go-mode dashboard whitespace-cleanup-mode zenburn-theme material-theme solarized-theme thrift centered-cursor-mode))))
+    (markdown-mode+ js2-mode mu4e-overview mu4e-jump-to-list evil-mu4e helm-cscope column-enforce-mode swiper-helm ivy-hydra counsel all-the-icons projectile scpaste find-file-in-project magit-gh-pulls which-key magit better-defaults restart-emacs eshell-git-prompt go-mode dashboard whitespace-cleanup-mode zenburn-theme material-theme solarized-theme thrift centered-cursor-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

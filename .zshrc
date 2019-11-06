@@ -1,7 +1,9 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/Cellar:$PATH
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/usr/local/opt/node@10/bin:$PATH"
+
+export TERM="xterm-256color"
 
 # Path to your oh-my-zsh installation.
 #export PATH=:/usr/local/opt/libxml2/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/Library/TeX/textbin:$PATH
@@ -54,7 +56,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions rails ruby)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -66,8 +68,8 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-export EDITOR='emacs -nw'
-export VISUAL='emacs -nw'
+export EDITOR=/usr/local/bin/emacs
+export VISUAL=/usr/local/bin/emacs
 
 #FORNO aliases
 alias docs="cd Documents"
@@ -132,6 +134,7 @@ cat () {ccat "$1"}
 
 # More Git tips http://firstaidgit.io/
 alias gss="git status -s"
+alias gg="git g -En"
 
 google() {
     search=""
@@ -147,9 +150,10 @@ google() {
 
 # POWERLINE CONFIG
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(host dir vcs rbenv)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(anaconda history time battery)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh host dir vcs background_jobs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(history time battery)
 POWERLEVEL9K_BATTERY_LEVEL_BACKGROUND=(darkred orange4 yellow4 yellow4 chartreuse3 green3 green4 darkgreen)
+POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE=false
 POWERLEVEL9K_BATTERY_ICON=''
 POWERLEVEL9K_BATTERY_VERBOSE=false
 POWERLEVEL9K_DIR_HOME_BACKGROUND='001'
@@ -171,3 +175,4 @@ history -cw >/dev/null 2>/dev/null
 
 
 
+export PATH="/usr/local/sbin:$PATH"
