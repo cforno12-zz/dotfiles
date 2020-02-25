@@ -1,128 +1,128 @@
-git rm part1.cpp 
-rm part1.cpp 
-git status
-exit
-cd ..
-git clone git@github.com:bu-cs547-20191s/assignment-2-cforno12.git
 ls
+cd lof
+cd log
+ls
+cd var.log
+cd var/log
+ls
+cat messages-20190707
+ls
+cat messages-20190728
+exit
+ls
+wget ftp://ftp3.linux.ibm.com:2121/redhat/ibm-yum.sh
+touch ibm-yum.sh
+ls
+cd ..
+cd ..
+ls
+cd etc
+ls
+cd yum.repos.d/
+ls
+cd ..
+cd ..
 cd home
 ls
-cd cforno1/
-l
+cd cris.forno/
 ls
-rm sketchbook/
-rm source-code-pro-2.030R-ro-1.050R-it/
-ls
-rm 1.050R-it.zip 
-rm -rf source-code-pro-2.030R-ro-1.050R-it/
+touch .macos.sh
 cd ..
-cd lribeir1/
-cd cforno1/
-cd Documents/
+find . -name '*ibmveth*'
+gss
+git status
 ls
-cd cs447/
+find . -name '*ibmveth*'
+touch reproduce.sh
 ls
-cd assignment-2-cforno12/
+rm reproduce.sh 
+cd ../..
 ls
-touch part_one.cpp
-touch Makefile
+cd cris.forno/
 ls
-emacs Makefile 
-make
-make
-./part_one 
+cd 138080/
 ls
-make
-make test
+touch reproduce.sh
+cd ..
+cd net
+find . -name 'ibmveth.c'
+ls
+rm compile_and_replace.sh 
+chmod a+rwx update.sh 
 exit
-make
-make test
-make
-make
-make test
-make test
-make
-make test
-make
-make test
-make
-make test
-make
-make test
-make
-make test
-make
-make test
-make 
-make test
-make
-make test
-make 
-make test
-make
-make est
-make test
-make
-make test
-make
-make test
-make 
-make test
-make
-make test
-make
-make test
-make
-make test
-make
-make test
-make
-make test
-amke
-make
-make test
-git add -A
-git commit -m "finished sequential histograms"
-git push
-exit
-git add -A
-git commit -m "finished parallelized with OpenMP"
-git push
-git add -A
-git commit -m "added timing for sequential and threaded histograms"
-git push
-touch part_two.cpp
-git add -A
-git commit -m "finished part2"
-git push
-make test02
-make test2
-make test2
-make test2
-make test2
-git stash
-git stash drop
-exit
-brew install slurm
+touch reproduce02.sh
+chmod a+rwx reproduce02.sh
 ls
-mkdir hw10
+touch testfile.txt
 ls
+chmod a+rwx testfile.txt 
 ls
-mkdir hw10
-ls
-cd hw10
-ls
-cd di
-cd dotfiles/
-git add -A
-git commit -m "sync"
-git push
-ls
+grep ibmveth_cleanup
+grep ibmveth_cleanup
 exit
 ls
-cd Documents/
+cd home
+cd cris.forno/
 ls
-mkdir weekly_meetings
+cd linux-5.2.6/
 ls
-cd weekly_meetings/
-touch 06_25_2019.txt
+cd drivers/net/ethernet/ibm/
+ls
+..
+..
+grep netif_wake_queue
+ls
+hexdump -C ibm,drc-names
+hexdump -C ibm,drc-names
+hexdump -C ibm,drc-names | head
+exit
+./update.sh 
+exit
+touch reproduce_once.sh
+touch refresh_driver.sh
+ls
+chmod a+rwx refresh_driver.sh 
+cp update.sh original.sh
+ls
+cp original.sh new
+rm new
+cp original.sh new,sh
+rm "new,sh"
+ls
+cp original.sh new.sh
+touch record_skb_events.sh
+cd ..
+cd ..
+find ./ -name 'virtio*'
+find ./ -name 'netvsc'
+find ./ -name 'netvsc*'
+ls
+touch ifcfg-net0.12
+ls Documents/
+touch Core-LTC-Values.md
+touch Departments-and-States.md
+mv Departments-and-States.md Departments-and-Projects.md
+touch Geogrpahies-and-States.md
+touch RH-SUSE-Release-Information.md
+touch LTC-Communications.md
+touch Open-Source-Legal-Requirements.md
+touch Resources.md
+ls
+rm *.hmtl
+touch vdc
+ls
+touch forno.patch
+cd ..
+cd ~/Downloads/
+ls
+cd submitted_and_accepted_patches/
+ls
+git send-email --to=cforno12@linux.vnet.ibm.com 0001-ibmveth-Detect-unsupported-packets-before-sending-to.patch 
+linux
+cd /
+cd Volumes/
+cd linux/
+cd linux/
+./scripts/
+cd ..
+./scripts/get_maintainer.pl drivers/net/hyperv/netvsc_drv.c 

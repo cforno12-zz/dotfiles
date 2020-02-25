@@ -1,16 +1,38 @@
 
 ;; ----- smex-history -----
 (
- cd
- 5x5
- arp
- dbx
- dig
- erc
- ert
+ lp6
+ lp16
+ eshell
+ grep
+ eval-buffer
+ customize-group
+ debug-on-entry
 )
 
 ;; ----- smex-data -----
 (
  (cd . 1)
+ (package-install . 9)
+ (find-file . 2)
+ (find-file-in-project . 1)
+ (dired . 3)
+ (eshell . 27)
+ (string-rectangle . 1)
+ (package-refresh-contents . 2)
+ (all-the-icons-install-fonts . 1)
+ (grep . 10)
+ (eval-buffer . 6)
+ (connect-remote . 6)
+ (counsel-git-grep . 3)
+ (ivy-mode . 1)
+ (counsel-find-file . 2)
+ (find-name-dired . 2)
+ (locate . 1)
+ (lp6 . 17)
+ (tramp-cleanup-all-connections . 1)
+ (revert-buffer . 1)
+ (debug-on-entry . 1)
+ (customize-group . 2)
+ (lp16 . 3)
 )
