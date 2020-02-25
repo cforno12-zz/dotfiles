@@ -1,0 +1,1 @@
+("~/dotfiles/" "/Volumes/linux/linux/" "~/Documents/mainline_power_virt_repo_demo/" "~/Documents/LTC_Wiki.wiki/" "~/Documents/LTC_wiki_main_repo/")
