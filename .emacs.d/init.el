@@ -47,6 +47,15 @@ There are two things you can do about this warning:
 
 (global-set-key (kbd "C-x s") 'save-all)
 
+(defun getmail ()
+  "Calling getmail to fetch email. Then calling notmuch to load and launch"
+  (interactive)
+  (shell-command "getmail")
+  (notmuch-mua-new-mail)
+  (notmuch))
+
+(global-set-key (kbd "C-x m") 'getmail)
+
 (defun delete-window-balance ()
   "Delete window and rebalance the remaining ones."
   (interactive)
@@ -217,6 +226,15 @@ There are two things you can do about this warning:
 
 (load-theme 'zenburn t)
 
+;;=========NOTMUCH===============
+(require 'notmuch)
+(define-key notmuch-search-mode-map "D"
+      (lambda (&optional beg end)
+        "delete email"
+        (interactive (notmuch-interactive-region))
+        (notmuch-search-tag (list "+deleted" "-inbox") beg end)))
+;;===================================
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -228,10 +246,13 @@ There are two things you can do about this warning:
  '(grep-command "grep --color -nHRI -e REGEX *")
  '(package-selected-packages
    (quote
-    (markdown-mode+ js2-mode mu4e-overview mu4e-jump-to-list evil-mu4e helm-cscope column-enforce-mode swiper-helm ivy-hydra counsel all-the-icons projectile scpaste find-file-in-project magit-gh-pulls which-key magit better-defaults restart-emacs eshell-git-prompt go-mode dashboard whitespace-cleanup-mode zenburn-theme material-theme solarized-theme thrift centered-cursor-mode))))
+    (ace-jump-buffer frog-menu frog-jump-buffer smart-tab markdown-mode+ js2-mode mu4e-overview mu4e-jump-to-list evil-mu4e helm-cscope column-enforce-mode swiper-helm ivy-hydra counsel all-the-icons projectile scpaste find-file-in-project magit-gh-pulls which-key magit better-defaults restart-emacs eshell-git-prompt go-mode dashboard whitespace-cleanup-mode zenburn-theme material-theme solarized-theme thrift centered-cursor-mode)))
+ '(send-mail-function (quote smtpmail-send-it))
+ '(smtpmail-smtp-server "na.relay.ibm.com")
+ '(smtpmail-smtp-service 25))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(cursor ((t (:background "#FF0000" :foreground "#FF0000")))))
